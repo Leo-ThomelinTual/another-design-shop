@@ -1,4 +1,4 @@
-.page {
+/*.page {
   --background: #fafafa;
   --foreground: #fff;
 
@@ -93,50 +93,144 @@ a.primary {
 a.secondary {
   border-color: var(--button-secondary-border);
 }
-
+*/
 /* Enable hover only on non-touch devices */
-@media (hover: hover) and (pointer: fine) {
-  a.primary:hover {
-    background: var(--button-primary-hover);
-    border-color: transparent;
-  }
+/*@media (hover: hover) and (pointer: fine) {
+    a.primary:hover {
+        background: var(--button-primary-hover);
+        border-color: transparent;
+    }
 
-  a.secondary:hover {
-    background: var(--button-secondary-hover);
-    border-color: transparent;
-  }
+    a.secondary:hover {
+        background: var(--button-secondary-hover);
+        border-color: transparent;
+    }
 }
 
 @media (max-width: 600px) {
-  .main {
-    padding: 48px 24px;
-  }
+    .main {
+        padding: 48px 24px;
+    }
 
-  .intro {
-    gap: 16px;
-  }
+    .intro {
+        gap: 16px;
+    }
 
-  .intro h1 {
-    font-size: 32px;
-    line-height: 40px;
-    letter-spacing: -1.92px;
-  }
+    .intro h1 {
+        font-size: 32px;
+        line-height: 40px;
+        letter-spacing: -1.92px;
+    }
 }
 
 @media (prefers-color-scheme: dark) {
-  .logo {
-    filter: invert();
+    .logo {
+        filter: invert();
+    }
+
+    .page {
+        --background: #000;
+        --foreground: #000;
+
+        --text-primary: #ededed;
+        --text-secondary: #999;
+
+        --button-primary-hover: #ccc;
+        --button-secondary-hover: #1a1a1a;
+        --button-secondary-border: #1a1a1a;
+    }
+}*/
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 20rem;
+  padding-bottom: 10em;
+}
+
+.showcase {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  column-gap: 10rem;
+  row-gap: 5em;
+  & > .imagePlaceholder {
+    width: 500px;
+    height: 500px;
+    border-radius: 10px;
+    background: lightgray;
+    box-shadow: 0 4px 10px 0px gray;
   }
+}
 
-  .page {
-    --background: #000;
-    --foreground: #000;
-
-    --text-primary: #ededed;
-    --text-secondary: #999;
-
-    --button-primary-hover: #ccc;
-    --button-secondary-hover: #1a1a1a;
-    --button-secondary-border: #1a1a1a;
+.showcaseBento {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3rem;
+  width: 100%;
+  height: 100%;
+  padding-inline: 20em;
+  /* Select all child element */
+  & > * {
+    justify-self: center;
+    border-radius: 10px;
+    background: lightgray;
+    box-shadow: 0 4px 10px 0px gray;
   }
+}
+
+.imagePlaceholder {
+  grid-column: span 2;
+  grid-row: span 2;
+  width: 100%;
+  height: 500px;
+}
+.imageBannerPlaceholder {
+  grid-column: span 4;
+  width: 100%;
+  height: 300px;
+}
+
+.showcaseDescription {
+  display: flex;
+  gap: 1rem;
+  box-shadow: inset 0 0 5px 0px gray;
+  flex-direction: column;
+  align-self: center;
+  width: 700px;
+  border-radius: 10px;
+  padding-inline: 20px;
+  padding-block: 40px;
+}
+
+.productCardContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-inline: 5%;
+}
+
+.shopCardContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+}
+
+.cardContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  gap: 2.5rem;
+  padding-inline: 20px;
+}
+
+.titleCard {
+  display: flex;
+  align-self: center;
+  padding: 20px;
+  border-radius: 10px;
+  text-transform: uppercase;
+  box-shadow: inset 0 0 5px 0 gray;
 }

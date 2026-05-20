@@ -1,14 +1,32 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --border: rgb(202, 202, 202);
+  --border-muted: rgb(202, 202, 202);
+  --muted: rgb(202, 202, 202);
+  --radius: 10px;
+  --spacing: 2rem;
+  --bold: bold;
+  --light-bold: 300;
+
+  --danger: red;
+  --warning: orange;
+  --success: green;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
   }
 }
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --background: #ededed;
+    --foreground: #0a0a0a;
+  }
+} */
 
 html {
   height: 100%;

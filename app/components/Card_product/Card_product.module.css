@@ -1,0 +1,33 @@
+.cardProduct {
+    position: relative;
+    width: 400px;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 5px 0px gray;
+}
+.cardProduct:hover .cardContent {
+    bottom: 0;
+    transition: bottom 0.5s ease;
+}
+.cardImage {
+    width: 100%;
+    height: 100%;
+    transition: filter 0.5s ease;
+}
+
+.cardContent {
+    position: absolute;
+    bottom: -50%;
+    border-radius: 10px 10px 0 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 1rem;
+    z-index: 1;
+    transition: bottom 0.5s ease;
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(10px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}

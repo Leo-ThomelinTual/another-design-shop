@@ -1,66 +1,58 @@
-import Image from "next/image";
 import styles from "./page.module.css";
+
+import Hero from "./components/hero/Hero";
+import Card from "./components/Card/card";
+import CarouselProduct from "./components/CarouselProduct/CarouselProduct";
+import { datas } from "./components/CarouselProduct/CarouselData";
 
 export default function Home() {
   return (
-    <div className={styles.page}>
+    <>
+      <Hero />
       <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className={styles.intro}>
-          <h1>To get started, edit the page.tsx file.</h1>
-          <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+        <section className={styles.showcaseBento}>
+          <div className={styles.imagePlaceholder} />
+          <div className={styles.imagePlaceholder} />
+          <div className={styles.imageBannerPlaceholder} />
+        </section>
+
+        <section className={styles.showcase}>
+          <div className={styles.imagePlaceholder} />
+
+          <article className={styles.showcaseDescription}>
+            <h2>Title</h2>
+            <p>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+              Obcaecati consectetur perspiciatis neque. Maxime provident iusto
+              debitis incidunt, doloremque molestiae eum similique voluptatibus
+              necessitatibus quas fugiat eveniet repellat corporis quae dolor!
+            </p>
+          </article>
+        </section>
+
+        <section className={styles.productCardContainer}>
+          <h1 className={styles.titleCard}>Placeholder title</h1>
+
+          <CarouselProduct />
+        </section>
+
+        <section className={styles.shopCardContainer}>
+          <h1 className={styles.titleCard}>Placeholder title</h1>
+          <div className={styles.cardContainer}>
+            {datas.map((data, index) => (
+              <Card
+                key={index}
+                image={data.image}
+                alt={data.alt}
+                title={data.title}
+                description={data.description}
+                link={data.link}
+                price={data.price}
+              />
+            ))}
+          </div>
+        </section>
       </main>
-    </div>
+    </>
   );
 }

@@ -1,0 +1,40 @@
+.hero {
+  display: flex;
+  height: 100vh;
+  position: relative;
+  justify-content: center;
+  width: 100%;
+  background: linear-gradient(to top, #ffffff 10%, #ffffff00 30%);
+}
+
+.heroImage {
+  z-index: -1;
+  padding: 10px;
+  filter: blur(3px);
+  border-radius: 50px;
+}
+
+.heroTitle {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  text-wrap: nowrap;
+  transform: translateX(-50%);
+  text-transform: uppercase;
+  z-index: 10;
+}
+
+.seeMoreLink {
+  position: absolute;
+  top: 55%;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  transition: gap 0.3s ease;
+}
+
+.seeMoreLink:hover {
+  gap: 10px;
+}
