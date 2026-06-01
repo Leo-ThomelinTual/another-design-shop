@@ -70,3 +70,11 @@ export const sizeShoes = [
     sizeShoes: "55",
   },
 ];
+export const genders = [
+  {
+    genderName: "Homme",
+  },
+  {
+    genderName: "Femme",
+  },
+];

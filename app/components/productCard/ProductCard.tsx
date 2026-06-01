@@ -9,6 +9,12 @@ interface productCardProps {
   title: string;
   description: string;
   price: number;
+  // isProductShoes?: boolean | false;
+  // isProductPants?: boolean | false;
+  // isProductShirt?: boolean | false;
+  // productTarget: "Female" | "Male";
+  // isProductForAdult?: boolean | true;
+  tags: string[];
 }
 
 const ProductCard = ({
@@ -18,10 +24,13 @@ const ProductCard = ({
   title,
   description,
   price,
+  tags,
 }: productCardProps) => {
   return (
     <Link className={styles.card} href={link}>
-      <Image src={image} alt={alt} height={200} width={400} loading="eager" />
+      <div className={styles.cardImageContainer}>
+        <Image src={image} alt={alt} fill loading="eager" />
+      </div>
 
       <div className={styles.cardContent}>
         <h3 className={styles.cardTitle}>{title}</h3>
@@ -31,6 +40,7 @@ const ProductCard = ({
             : description}
         </p>
         <p className={styles.cardPrice}>{price}€</p>
+        <p>{tags}</p>
       </div>
     </Link>
   );

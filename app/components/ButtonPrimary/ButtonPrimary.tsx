@@ -1,19 +1,36 @@
-import { Icon } from "@iconify/react";
-import styles from "./ButtonPrimary.module.css";
-import Link from "next/link";
 import React from "react";
+import styles from "./ButtonPrimary.module.css";
+import { Icon } from "@iconify/react";
+import Link from "next/link";
 
 interface ButtonPrimaryProps {
-  icon: string;
-  href: string;
   children: React.ReactNode;
+  icon: string;
+  isButton?: boolean;
+  asIcon: boolean;
+  asText: boolean;
+  href: string;
+  onClick?: (e: any) => void;
 }
 
-const ButtonPrimary = ({ icon, href, children }: ButtonPrimaryProps) => {
-  return (
+const ButtonPrimary = ({
+  children,
+  icon,
+  isButton,
+  asIcon,
+  asText,
+  href,
+  onClick,
+}: ButtonPrimaryProps) => {
+  return isButton ? (
+    <button onClick={onClick} className={styles.button}>
+      {asText ? children : null}
+      {asIcon ? <Icon className={styles.buttonIcon} icon={icon} /> : null}
+    </button>
+  ) : (
     <Link className={styles.button} href={href}>
-      {children}
-      <Icon className={styles.buttonIcon} icon={icon} />
+      {asText ? children : null}
+      {asIcon ? <Icon className={styles.buttonIcon} icon={icon} /> : null}
     </Link>
   );
 };

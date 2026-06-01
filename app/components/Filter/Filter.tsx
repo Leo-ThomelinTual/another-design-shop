@@ -1,15 +1,40 @@
 "use client";
-import { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./Filter.module.css";
 import { brands, sizes, sizeShoes } from "@/app/assets/data";
 
 const Filter = () => {
+  const [filterPrice, setFilterPrice] = useState();
+  const [isChecked, setIsChecked] = useState<boolean>(true);
+
+  const handleInputChangePrice = (
+    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
+    setFilterPrice({
+      ...filterPrice,
+      [event.target.name]: event.target.value,
+    });
+    console.log(event.target.value);
+  };
+
+  const handleInputChangeCheckbox = (
+    event: React.ChangeEvent<HTMLInputElement>,
+  ) => {
+    setIsChecked({
+      ...isChecked,
+      [event.target.name]: event.target.value,
+      [event.target.name]: event.target.checked,
+    });
+    // setIsChecked(() => !isChecked);
+    console.log(event.target.name, event.target.value, event.target.checked);
+  };
+
   useEffect(() => {
     const value = document.querySelector("#price_range_value");
     const input = document.querySelector("#price_range");
 
     value.textContent = input.value;
-    input.addEventListener("input", (event) => {
+    input?.addEventListener("input", (event) => {
       value.textContent = event.target.value;
     });
   });
@@ -19,19 +44,20 @@ const Filter = () => {
       <ul className={styles.rowFilterList}>
         <li className={styles.filterListPrice}>
           <label htmlFor="price">
-            Prix <output id="price_range_value"></output>€
+            Prix &gt; <output id="price_range_value"></output>€
           </label>
           <input
+            onChange={(event) => handleInputChangePrice(event)}
             type="range"
             id="price_range"
             name="price"
-            min="0"
+            min="10"
             max="1000"
             step="10"
           />
           <datalist className={styles.dataList}>
-            <option value="0" label="0"></option>
-            <option value="1000" label="1000"></option>
+            <option value="10" label="10€" />
+            <option value="1000" label="1000€" />
           </datalist>
         </li>
       </ul>
@@ -40,7 +66,11 @@ const Filter = () => {
       <ul className={styles.columnFilterList}>
         {sizes.map((size) => (
           <li key={size.id}>
-            <input type="checkbox" name={size.sizeName} />
+            <input
+              type="checkbox"
+              name={size.sizeName}
+              onChange={(event) => handleInputChangeCheckbox(event)}
+            />
             <label className={styles.sizeNameLabel} htmlFor={size.sizeName}>
               {size.sizeName}
             </label>
@@ -52,7 +82,11 @@ const Filter = () => {
       <ul className={styles.rowFilterList}>
         {brands.map((brand) => (
           <li key={brand.id}>
-            <input type="checkbox" name={brand.name} />
+            <input
+              type="checkbox"
+              name={brand.name}
+              onChange={(event) => handleInputChangeCheckbox(event)}
+            />
             <label htmlFor={brand.name}>{brand.name}</label>
           </li>
         ))}
@@ -61,7 +95,11 @@ const Filter = () => {
       <ul className={styles.columnFilterList}>
         {sizeShoes.map((sizeShoe) => (
           <li key={sizeShoe.id}>
-            <input type="checkbox" name={sizeShoe.sizeShoes} />
+            <input
+              type="checkbox"
+              name={sizeShoe.sizeShoes}
+              onChange={(event) => handleInputChangeCheckbox(event)}
+            />
             <label htmlFor={sizeShoe.sizeShoes}>{sizeShoe.sizeShoes}</label>
           </li>
         ))}

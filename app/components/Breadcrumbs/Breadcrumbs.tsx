@@ -4,11 +4,11 @@ import styles from "./Breadcrumbs.module.css";
 
 const Breadcrumbs = () => {
   const pathname = usePathname();
-  const segments = pathname.split("/");
+  const segments = pathname?.split("/");
 
   return (
     <nav className={styles.breadcrumbsContainer}>
-      {segments.map((segments, index) => (
+      {segments?.map((segments, index) => (
         <span key={index}>
           {" / "}
           {segments}

@@ -1,0 +1,11 @@
+.filterBy {
+  display: flex;
+  align-self: end;
+  height: max-content;
+  width: max-content;
+  background: var(--background);
+  padding: 10px;
+  border: 2px solid transparent;
+  border-radius: var(--radius);
+  color: var(--foreground);
+}

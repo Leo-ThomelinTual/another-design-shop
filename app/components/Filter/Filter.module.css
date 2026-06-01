@@ -1,7 +1,4 @@
 .filterContainer {
-  /* position: sticky;
-  top: 50%;
-  transform: translateY(-50%); */
   display: flex;
   flex-direction: column;
   height: max-content;

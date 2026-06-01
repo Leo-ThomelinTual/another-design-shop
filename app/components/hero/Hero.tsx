@@ -24,6 +24,7 @@ const Hero = () => {
           scrub: 1,
         },
         left: 250,
+        fontSize: 24,
         top: 27,
       });
     },
