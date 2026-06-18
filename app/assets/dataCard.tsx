@@ -1,6 +1,6 @@
 export const dataCard = [
   {
-    image: "/img/Summer-Scene-Light.png",
+    image: "/img/placeholder_product.jpg",
     alt: "alt image",
     title: "Placeholder title 1",
     description: "Placeholder description for 1",
@@ -10,7 +10,7 @@ export const dataCard = [
     tags: ["Female", "T-Shirt"],
   },
   {
-    image: "/img/Summer-Scene-Light.png",
+    image: "/img/placeholder_product.jpg",
     alt: "alt image",
     title: "Placeholder title 2",
     description: "Placeholder description for 2",
@@ -20,7 +20,7 @@ export const dataCard = [
     tags: ["Male", "Pants"],
   },
   {
-    image: "/img/Summer-Scene-Light.png",
+    image: "/img/placeholder_product.jpg",
     alt: "alt image",
     title: "Placeholder title 3",
     description: "Placeholder description for 3",
@@ -30,7 +30,7 @@ export const dataCard = [
     tags: ["Test", "test"],
   },
   {
-    image: "/img/Summer-Scene-Light.png",
+    image: "/img/placeholder_product.jpg",
     alt: "alt image",
     title: "Placeholder title 1",
     description: "Placeholder description for 1",
@@ -40,7 +40,7 @@ export const dataCard = [
     tags: ["Test", "test"],
   },
   {
-    image: "/img/Summer-Scene-Light.png",
+    image: "/img/placeholder_product.jpg",
     alt: "alt image",
     title: "Placeholder title 1",
     description: "Placeholder description for 1",
@@ -50,7 +50,7 @@ export const dataCard = [
     tags: ["Test", "test"],
   },
   {
-    image: "/img/Summer-Scene-Light.png",
+    image: "/img/placeholder_product.jpg",
     alt: "alt image",
     title: "Placeholder title 1",
     description: "Placeholder description for 1",
@@ -60,7 +60,7 @@ export const dataCard = [
     tags: ["Test", "test"],
   },
   {
-    image: "/img/Summer-Scene-Light.png",
+    image: "/img/placeholder_product.jpg",
     alt: "alt image",
     title: "Placeholder title 1",
     description: "Placeholder description for 1",
@@ -70,7 +70,7 @@ export const dataCard = [
     tags: ["Test", "test"],
   },
   {
-    image: "/img/Summer-Scene-Light.png",
+    image: "/img/placeholder_product.jpg",
     alt: "alt image",
     title: "Placeholder title 1",
     description: "Placeholder description for 1",

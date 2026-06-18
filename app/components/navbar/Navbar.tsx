@@ -1,7 +1,7 @@
 "use client";
 import styles from "./navbar.module.css";
 import ButtonPrimary from "../ButtonPrimary/ButtonPrimary";
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import Link from "next/link";
 import SearchBar from "../SearchBar/SearchBar";
 import { Icon } from "@iconify/react";
@@ -101,7 +101,9 @@ const Navbar = () => {
             brand <span>brand</span>
           </h1>
         </div>
-        <SearchBar />
+        <Suspense>
+          <SearchBar />
+        </Suspense>
         <li className={styles.navbarItem}>
           <ButtonPrimary
             asText={true}

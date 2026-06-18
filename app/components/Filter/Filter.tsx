@@ -28,8 +28,11 @@ const Filter = ({ onPriceChange, onParams }: FilterProps) => {
   };
 
   useEffect(() => {
-    const value = document.querySelector("#price_range_value");
-    value.textContent = filterPrice;
+    const price_value = document.querySelector("#price_range_value");
+    const conv = filterPrice as unknown;
+    if (price_value !== null) {
+      price_value.textContent = conv as string;
+    }
   });
 
   const handleInputChangeCheckbox = (

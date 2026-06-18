@@ -9,14 +9,14 @@ export default function Home() {
     <>
       <header>
         <Navbar />
-        <HeroBanner image="/img/Banner-1.png" alt="" />
+        <HeroBanner image="/img/Banner-1.jpg" alt="" />
       </header>
       <main className={styles.main}>
         <section className={styles.showcaseBento}>
           <Link className={styles.imageBannerLink} href="/femme">
             <Image
               className={styles.imageBanner}
-              src="/img/Banner-1.png"
+              src="/img/Banner-1.jpg"
               alt=""
               width={2226}
               height={500}
@@ -25,7 +25,7 @@ export default function Home() {
           <Link className={styles.imageBoxLink} href="/ado">
             <Image
               className={styles.imageBox}
-              src="/img/Banner-2.png"
+              src="/img/Banner-2.jpg"
               alt=""
               width={1105}
               height={500}
@@ -34,7 +34,7 @@ export default function Home() {
           <Link className={styles.imageBoxLink} href="/ado">
             <Image
               className={styles.imageBox}
-              src="/img/Banner-2.png"
+              src="/img/Banner-2.jpg"
               alt=""
               width={1105}
               height={500}

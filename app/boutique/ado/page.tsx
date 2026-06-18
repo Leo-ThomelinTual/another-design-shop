@@ -7,9 +7,7 @@ export default function Ado() {
   return (
     <div className={styles.contentContainer}>
       {/* Filter for the shop */}
-      <aside>
-        <Filter />
-      </aside>
+      <aside></aside>
       {/* SHOP Section */}
       <section className={styles.cardContainer}>
         {dataCard.map((data, index) => (
@@ -20,6 +18,7 @@ export default function Ado() {
             title={data.title}
             description={data.description}
             link={data.link}
+            size={data.size}
             price={data.price}
             tags={data.tags}
           />

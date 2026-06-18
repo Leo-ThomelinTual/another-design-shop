@@ -1,19 +1,19 @@
 export const brands = [
   {
     id: "1",
-    name: "Addidas",
+    name: "Brand1",
   },
   {
     id: "2",
-    name: "Nike",
+    name: "Brand2",
   },
   {
     id: "3",
-    name: "Converse",
+    name: "Brand3",
   },
   {
     id: "4",
-    name: "Addidas",
+    name: "Brand4",
   },
 ];
 
@@ -68,13 +68,5 @@ export const sizeShoes = [
   {
     id: "6",
     sizeShoes: "55",
-  },
-];
-export const genders = [
-  {
-    genderName: "Homme",
-  },
-  {
-    genderName: "Femme",
   },
 ];

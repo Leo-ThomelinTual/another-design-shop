@@ -30,11 +30,7 @@ export default function Femme() {
       </div>
       <div className={styles.contentContainer}>
         {/* Filter for the shop */}
-        {isFilterActive ? (
-          <aside>
-            <Filter />
-          </aside>
-        ) : null}
+        {isFilterActive ? <aside></aside> : null}
         {/* SHOP Section */}
         <section className={styles.cardContainer}>
           {dataCard.map((data, index) => (
@@ -45,6 +41,7 @@ export default function Femme() {
               title={data.title}
               description={data.description}
               link={data.link}
+              size={data.size}
               price={data.price}
               tags={data.tags}
             />
