@@ -3,41 +3,54 @@ import React, { useEffect, useState } from "react";
 import styles from "./Filter.module.css";
 import { brands, sizes, sizeShoes } from "@/app/assets/data";
 
-const Filter = () => {
-  const [filterPrice, setFilterPrice] = useState();
+interface FilterProps {
+  onPriceChange: (price: number) => void;
+  onParams: (size: [string, string]) => void;
+}
+
+// {
+//   onPriceChange,
+// }: {
+//   onPriceChange: (price: number) => void;
+// },
+// { onParams }: { onParams: (size: [string, string]) => void },
+
+const Filter = ({ onPriceChange, onParams }: FilterProps) => {
+  const [filterPrice, setFilterPrice] = useState<number>(500);
   const [isChecked, setIsChecked] = useState<boolean>(true);
 
   const handleInputChangePrice = (
     event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
-    setFilterPrice({
-      ...filterPrice,
-      [event.target.name]: event.target.value,
-    });
-    console.log(event.target.value);
-  };
-
-  const handleInputChangeCheckbox = (
-    event: React.ChangeEvent<HTMLInputElement>,
-  ) => {
-    setIsChecked({
-      ...isChecked,
-      [event.target.name]: event.target.value,
-      [event.target.name]: event.target.checked,
-    });
-    // setIsChecked(() => !isChecked);
-    console.log(event.target.name, event.target.value, event.target.checked);
+    const newPrice = +event.target.value;
+    setFilterPrice(newPrice);
+    onPriceChange(newPrice);
   };
 
   useEffect(() => {
     const value = document.querySelector("#price_range_value");
-    const input = document.querySelector("#price_range");
-
-    value.textContent = input.value;
-    input?.addEventListener("input", (event) => {
-      value.textContent = event.target.value;
-    });
+    value.textContent = filterPrice;
   });
+
+  const handleInputChangeCheckbox = (
+    event: React.ChangeEvent<HTMLInputElement>,
+  ) => {
+    // setIsChecked({
+    //   ...isChecked,
+    //   [event.target.name]: event.target.value,
+    //   [event.target.name]: event.target.checked,
+    // });
+    setIsChecked(event.target.checked);
+    onParams([event.target.value, event.target.name]);
+
+    // setIsChecked(() => !isChecked);
+    console.log(
+      event.target.name,
+      event.target.value,
+      event.target.checked,
+      isChecked,
+    );
+  };
 
   return (
     <div className={styles.filterContainer}>
@@ -51,6 +64,7 @@ const Filter = () => {
             type="range"
             id="price_range"
             name="price"
+            defaultValue={filterPrice}
             min="10"
             max="1000"
             step="10"

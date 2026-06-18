@@ -14,6 +14,7 @@ interface productCardProps {
   // isProductShirt?: boolean | false;
   // productTarget: "Female" | "Male";
   // isProductForAdult?: boolean | true;
+  size: string[];
   tags: string[];
 }
 
@@ -24,6 +25,7 @@ const ProductCard = ({
   title,
   description,
   price,
+  size,
   tags,
 }: productCardProps) => {
   return (
@@ -41,6 +43,7 @@ const ProductCard = ({
         </p>
         <p className={styles.cardPrice}>{price}€</p>
         <p>{tags}</p>
+        <p>{size}</p>
       </div>
     </Link>
   );

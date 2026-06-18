@@ -25,7 +25,7 @@ const Hero = () => {
         },
         left: 250,
         fontSize: 24,
-        top: 27,
+        top: 35,
       });
     },
     { scope: title },

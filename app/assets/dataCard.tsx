@@ -6,6 +6,7 @@ export const dataCard = [
     description: "Placeholder description for 1",
     link: "/",
     price: 20,
+    size: ["xxl", "xl"],
     tags: ["Female", "T-Shirt"],
   },
   {
@@ -15,6 +16,7 @@ export const dataCard = [
     description: "Placeholder description for 2",
     link: "/",
     price: 99,
+    size: ["lg"],
     tags: ["Male", "Pants"],
   },
   {
@@ -24,6 +26,7 @@ export const dataCard = [
     description: "Placeholder description for 3",
     link: "/",
     price: 20,
+    size: ["l", "m"],
     tags: ["Test", "test"],
   },
   {
@@ -33,6 +36,7 @@ export const dataCard = [
     description: "Placeholder description for 1",
     link: "/",
     price: 120,
+    size: ["xxl", "xl"],
     tags: ["Test", "test"],
   },
   {
@@ -42,6 +46,7 @@ export const dataCard = [
     description: "Placeholder description for 1",
     link: "/",
     price: 30,
+    size: ["xxl", "xl"],
     tags: ["Test", "test"],
   },
   {
@@ -51,6 +56,7 @@ export const dataCard = [
     description: "Placeholder description for 1",
     link: "/",
     price: 40,
+    size: ["xxl", "xl"],
     tags: ["Test", "test"],
   },
   {
@@ -60,6 +66,7 @@ export const dataCard = [
     description: "Placeholder description for 1",
     link: "/",
     price: 20,
+    size: ["xxl", "xl"],
     tags: ["Test", "test"],
   },
   {
@@ -69,6 +76,7 @@ export const dataCard = [
     description: "Placeholder description for 1",
     link: "/",
     price: 20,
+    size: ["xxl", "xl"],
     tags: ["Test", "test"],
   },
 ];

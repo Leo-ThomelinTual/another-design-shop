@@ -1,0 +1,8 @@
+.searchBar {
+  width: clamp(500px, 50%, 100%);
+  padding-inline: 10px;
+  border: 2px solid var(--border);
+  background-color: transparent;
+  color: var(--muted);
+  border-radius: 500px;
+}
