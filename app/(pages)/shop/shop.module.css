@@ -1,0 +1,28 @@
+.shopLayout {
+    display: flex;
+    flex-direction: column;
+    padding-inline: 20rem;
+    margin-block: 2rem;
+    gap: 2rem;
+}
+
+.contentContainer {
+    position: relative;
+    display: flex;
+    /* gap: 1rem; */
+    width: 100%;
+}
+
+.cardContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    width: 100%;
+    justify-content: center;
+}
+
+.filterContainer {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}

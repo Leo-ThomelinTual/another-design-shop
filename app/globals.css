@@ -41,7 +41,6 @@ body {
 body {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
   color: var(--foreground);
   background: var(--background);
   font-family: system-ui;

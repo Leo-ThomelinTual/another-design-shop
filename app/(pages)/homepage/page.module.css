@@ -1,0 +1,114 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  padding-block: 2rem;
+}
+
+.showcase {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  column-gap: 10rem;
+  row-gap: 5em;
+  & > .imagePlaceholder {
+    width: 500px;
+    height: 500px;
+    border-radius: 10px;
+    background: lightgray;
+    box-shadow: 0 4px 10px 0px gray;
+  }
+}
+
+.showcaseBento {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  width: 100%;
+  height: 100%;
+  padding-inline: 20em;
+  /* Select all child element */
+  & > * {
+    justify-self: center;
+    background: lightgray;
+  }
+}
+
+.imagePlaceholder {
+  grid-column: span 2;
+  grid-row: span 2;
+  width: 100%;
+  height: 500px;
+}
+
+.imageBoxLink {
+  grid-column: span 2;
+  grid-row: span 2;
+  width: 100%;
+  height: 500px;
+}
+
+.imageBox {
+  width: 100%;
+  height: 100%;
+}
+
+.imageBannerPlaceholder {
+  grid-column: span 4;
+  width: 100%;
+  height: 500px;
+}
+
+.imageBanner {
+  width: 100%;
+  height: 100%;
+}
+
+.imageBannerLink {
+  grid-column: span 4;
+  height: 500px;
+  width: 100%;
+}
+
+.showcaseDescription {
+  display: flex;
+  gap: 1rem;
+  box-shadow: inset 0 0 5px 0px gray;
+  flex-direction: column;
+  align-self: center;
+  width: 700px;
+  border-radius: 10px;
+  padding-inline: 20px;
+  padding-block: 40px;
+}
+
+.productCardContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-inline: 5%;
+}
+
+.shopCardContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+}
+
+.cardContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  gap: 2.5rem;
+  padding-inline: 20px;
+}
+
+.titleCard {
+  display: flex;
+  align-self: center;
+  padding: 20px;
+  border-radius: 10px;
+  text-transform: uppercase;
+  box-shadow: inset 0 0 5px 0 gray;
+}

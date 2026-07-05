@@ -1,0 +1,25 @@
+.footerContainer {
+  width: 100%;
+  height: max-content;
+  padding-inline: 20rem;
+  margin-bottom: 2rem;
+}
+
+.footerContent {
+  display: flex;
+  gap: 2rem;
+  box-shadow: inset 0 0 10px 0 gray;
+  padding: 2rem;
+  width: 100%;
+  border-radius: 10px;
+}
+
+.footerContentContainer {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  text-transform: uppercase;
+  gap: 1rem;
+  width: 100%;
+  height: 300px;
+}
