@@ -1,51 +1,51 @@
 .navbarCategoryContainer {
-    position: fixed;
-    top: 6rem;
-    right: 0;
-    display: flex;
-    flex-direction: row-reverse;
-    background: var(--background);
-    color: var(--foreground);
-    justify-content: end;
-    overflow: hidden;
-    padding: 0;
-    gap: 2rem;
-    width: 100%;
-    height: 0;
-    transition:
-        border-top 0.1s ease,
-        height 0.3s ease;
+  position: fixed;
+  top: 6rem;
+  right: 0;
+  display: flex;
+  flex-direction: row-reverse;
+  background: var(--background);
+  color: var(--foreground);
+  justify-content: end;
+  overflow: hidden;
+  padding: 0;
+  gap: 2rem;
+  width: 100%;
+  height: 0;
+  transition:
+    border-top 0.1s ease,
+    height 0.3s ease;
 }
 
 .navbarCategoryContainerActive {
-    height: max-content;
-    padding: 1rem;
+  height: max-content;
+  padding: 1rem;
 }
 
 .navbarCategory,
 .navbarSubCategory {
-    list-style-type: none;
-    height: max-content;
+  list-style-type: none;
+  height: max-content;
 }
 .navbarCategory {
-    display: flex;
-    flex-direction: column;
-    width: 1fr;
-    text-wrap: nowrap;
-    align-items: end;
-    gap: 1rem;
-    > * {
-        width: 100%;
-    }
+  display: flex;
+  flex-direction: column;
+  width: 1fr;
+  text-wrap: nowrap;
+  align-items: end;
+  gap: 1rem;
+  > * {
+    width: 100%;
+  }
 }
 
 .navbarSubCategory {
-    display: grid;
-    grid-template-columns: repeat(3, 250px);
-    overflow: hidden;
-    width: 100%;
-    gap: 1rem;
-    justify-content: end;
-    height: max-content;
-    transition: width 0.4s ease;
+  display: grid;
+  grid-template-columns: repeat(3, 250px);
+  overflow: hidden;
+  width: 100%;
+  gap: 1rem;
+  justify-content: end;
+  height: max-content;
+  transition: width 0.4s ease;
 }

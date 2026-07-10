@@ -1,0 +1,60 @@
+.shopLayout {
+  display: grid;
+  grid-template-columns: 1fr;
+  padding: 2rem;
+  width: 100%;
+  height: max-content;
+  overflow: hidden;
+  gap: 2rem;
+}
+
+.contentContainer {
+  display: grid;
+  grid-template-columns: max-content repeat(5, 1fr);
+  width: 100%;
+}
+
+.contentContainerActive {
+  gap: 2rem;
+}
+
+.cardContainer {
+  display: flex;
+  flex-wrap: wrap;
+  grid-column: span 5;
+
+  width: 100%;
+  height: 100vh;
+  overflow-y: scroll;
+  justify-content: space-between;
+}
+
+.filterContainer {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.filter {
+  grid-column: span 1;
+  height: 100%;
+}
+
+@media (max-width: 1012px) {
+  .shopLayout {
+    padding: 0rem;
+    overflow-y: visible;
+  }
+  .contentContainer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .cardContainer {
+    grid-column: span 2;
+    height: 100%;
+    overflow-y: visible;
+    justify-content: space-between;
+  }
+  .filter {
+    grid-column: span 2;
+  }
+}

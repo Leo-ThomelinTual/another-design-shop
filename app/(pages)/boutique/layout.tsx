@@ -1,6 +1,5 @@
 import { Metadata } from "next";
 import styles from "./shop.module.css";
-import Breadcrumbs from "@/app/_components/Breadcrumbs/Breadcrumbs";
 
 export const metadata: Metadata = {
   title: "Boutique",
@@ -12,10 +11,5 @@ export default function ShopLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return (
-    <>
-      <Breadcrumbs />
-      <main className={styles.shopLayout}>{children}</main>
-    </>
-  );
+  return <main className={styles.shopLayout}>{children}</main>;
 }

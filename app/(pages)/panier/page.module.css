@@ -1,0 +1,35 @@
+.main {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  width: 100%;
+  padding: 5rem;
+  height: 100vh;
+  overflow-y: hidden;
+}
+
+.cartItemList {
+  display: flex;
+  flex-direction: column;
+  grid-column: span 3;
+  gap: 2rem;
+  overflow-y: scroll;
+  width: 100%;
+  height: 100%;
+}
+
+.checkoutContainer {
+  grid-column: span 1;
+}
+
+.cartButtonContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  justify-content: end;
+  width: 100%;
+  button {
+    padding: 0.5rem;
+    width: max-content;
+  }
+}

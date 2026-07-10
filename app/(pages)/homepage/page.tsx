@@ -6,7 +6,9 @@ import HeroBanner from "../../_components/HeroBanner/HeroBanner";
 export default function Home() {
   return (
     <>
-      <HeroBanner image="/img/Banner-1.jpg" alt="" />
+      <header>
+        <HeroBanner image="/img/Banner-1.jpg" alt="" />
+      </header>
       <main className={styles.main}>
         <section className={styles.showcaseBento}>
           <Link className={styles.imageBannerLink} href="/femme">

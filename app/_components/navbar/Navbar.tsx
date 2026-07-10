@@ -1,16 +1,18 @@
 "use client";
 import styles from "./navbar.module.css";
 import ButtonPrimary from "../Utils/Buttons/ButtonPrimary/ButtonPrimary";
-import { Suspense, useEffect, useState } from "react";
+import { useState } from "react";
 import SearchBar from "../SearchBar/SearchBar";
 import { Icon } from "@iconify/react";
 import Subnav from "../Subnav/Subnav";
 import { useRouter } from "next/navigation";
+import ButtonSecondary from "../Utils/Buttons/ButtonsSecondary/ButtonSecondary";
 
 const Navbar = () => {
   const router = useRouter();
   const [isNavbarShopCategoryActive, setIsNavbarShopCategoryActive] =
     useState<boolean>(false);
+  const [isMenuActive, setIsMenuActive] = useState<boolean>(false);
 
   // const [isSubCategoryFemaleActive, setIsSubCategoryFemaleActive] =
   //   useState<boolean>(false);
@@ -21,8 +23,6 @@ const Navbar = () => {
   // const [isSubCategoryChildActive, setIsSubCategoryChildActive] =
   //   useState<boolean>(false);
 
-  const [isScroll, setScroll] = useState(0);
-
   // const CloseAll = () => {
   //   setIsNavbarShopCategoryActive(false);
   //   setIsSubCategoryAdoActive(false);
@@ -31,33 +31,19 @@ const Navbar = () => {
   //   setIsSubCategoryMaleActive(false);
   // };
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const winScroll =
-        document.documentElement.scrollTop || document.body.scrollTop;
-
-      setScroll(winScroll);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
   const handleRouting = (href: string) => {
     router.push(href);
   };
 
   return (
-    <nav
-      className={styles.navbar}
-      style={isScroll ? { position: `fixed` } : { position: `relative` }}
-    >
+    <nav className={styles.navbar}>
       <ul className={styles.navbarItemContainer}>
-        <div className={styles.navbarStart}>
-          <h1 className={styles.brandname}>brand</h1>
-        </div>
-        <Suspense>
+        <li onClick={() => handleRouting("/")} className={styles.navbarItem}>
+          <h1>brand</h1>
+        </li>
+        <li className={styles.navbarItem}>
           <SearchBar />
-        </Suspense>
+        </li>
         <li className={styles.navbarItem}>
           <ButtonPrimary onClick={() => handleRouting("/")}>
             Accueil
@@ -76,28 +62,84 @@ const Navbar = () => {
         </li>
 
         <li className={styles.navbarItem}>
-          <ButtonPrimary onClick={() => handleRouting("/")}>
+          <ButtonPrimary onClick={() => handleRouting("/panier")}>
             Panier
             <Icon fontSize={24} icon="mdi:cart" />
           </ButtonPrimary>
         </li>
 
         <li className={styles.navbarItem}>
-          <ButtonPrimary onClick={() => handleRouting("/")}>
+          <ButtonPrimary onClick={() => handleRouting("/connexion")}>
             Connexion
             <Icon fontSize={24} icon="mdi:contacts" />
           </ButtonPrimary>
         </li>
         <li className={styles.navbarItem}>
-          <ButtonPrimary onClick={() => handleRouting("/")}>
+          <ButtonPrimary onClick={() => handleRouting("/inscription")}>
             Inscription
             <Icon fontSize={24} icon="mdi:contacts" />
           </ButtonPrimary>
         </li>
         <li className={styles.navbarItem}>
-          <ButtonPrimary>
+          <ButtonPrimary onClick={() => setIsMenuActive(!isMenuActive)}>
             Menu
             <Icon fontSize={24} icon="mdi:menu" />
+          </ButtonPrimary>
+        </li>
+      </ul>
+      <ul
+        className={
+          styles.navbarItemContainerMobile +
+          " " +
+          (isMenuActive ? styles.navbarItemContainerMobileActive : null)
+        }
+      >
+        <li onClick={() => handleRouting("/")} className={styles.navbarItem}>
+          <h1>brand</h1>
+        </li>
+        <li className={styles.navbarItem}>
+          <ButtonSecondary
+            isActive={true}
+            onClick={() => setIsMenuActive(!isMenuActive)}
+          >
+            <Icon fontSize={24} icon="mdi:close" />
+            Fermer
+          </ButtonSecondary>
+        </li>
+        <li className={styles.navbarItem}>
+          <ButtonPrimary onClick={() => handleRouting("/")}>
+            Accueil
+            <Icon fontSize={24} icon="mdi:home" />
+          </ButtonPrimary>
+        </li>
+        <li className={styles.navbarItem}>
+          <ButtonPrimary
+            onClick={() =>
+              setIsNavbarShopCategoryActive(!isNavbarShopCategoryActive)
+            }
+          >
+            Boutique
+            <Icon fontSize={24} icon="mdi:shop" />
+          </ButtonPrimary>
+        </li>
+
+        <li className={styles.navbarItem}>
+          <ButtonPrimary onClick={() => handleRouting("/panier")}>
+            Panier
+            <Icon fontSize={24} icon="mdi:cart" />
+          </ButtonPrimary>
+        </li>
+
+        <li className={styles.navbarItem}>
+          <ButtonPrimary onClick={() => handleRouting("/connexion")}>
+            Connexion
+            <Icon fontSize={24} icon="mdi:contacts" />
+          </ButtonPrimary>
+        </li>
+        <li className={styles.navbarItem}>
+          <ButtonPrimary onClick={() => handleRouting("/inscription")}>
+            Inscription
+            <Icon fontSize={24} icon="mdi:contacts" />
           </ButtonPrimary>
         </li>
       </ul>

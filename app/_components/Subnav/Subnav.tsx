@@ -91,10 +91,10 @@ const Subnav = ({ isSubNavActive }: SubNavProps) => {
           <ul className={styles.navbarCategory}>
             <li>
               <ButtonSecondary
-                isActive={activeCategoryGenderChild === `boy` ? true : false}
+                isActive={activeCategoryGenderChild === `garcon` ? true : false}
                 onClick={() =>
                   setActiveCategoryGenderChild(
-                    activeCategoryGenderChild === "boy" ? null : "boy",
+                    activeCategoryGenderChild === "garcon" ? null : "garcon",
                   )
                 }
               >
@@ -104,10 +104,10 @@ const Subnav = ({ isSubNavActive }: SubNavProps) => {
             </li>
             <li>
               <ButtonSecondary
-                isActive={activeCategoryGenderChild === `girl` ? true : false}
+                isActive={activeCategoryGenderChild === `fille` ? true : false}
                 onClick={() =>
                   setActiveCategoryGenderChild(
-                    activeCategoryGenderChild === "girl" ? null : "girl",
+                    activeCategoryGenderChild === "fille" ? null : "fille",
                   )
                 }
               >
@@ -124,10 +124,10 @@ const Subnav = ({ isSubNavActive }: SubNavProps) => {
           <ul className={styles.navbarCategory}>
             <li>
               <ButtonSecondary
-                isActive={activeCategoryGenderAdo === `boy` ? true : false}
+                isActive={activeCategoryGenderAdo === `garcon` ? true : false}
                 onClick={() =>
                   setActiveCategoryGenderAdo(
-                    activeCategoryGenderAdo === "boy" ? null : "boy",
+                    activeCategoryGenderAdo === "garcon" ? null : "garcon",
                   )
                 }
               >
@@ -137,10 +137,10 @@ const Subnav = ({ isSubNavActive }: SubNavProps) => {
             </li>
             <li>
               <ButtonSecondary
-                isActive={activeCategoryGenderAdo === `girl` ? true : false}
+                isActive={activeCategoryGenderAdo === `fille` ? true : false}
                 onClick={() =>
                   setActiveCategoryGenderAdo(
-                    activeCategoryGenderAdo === "girl" ? null : "girl",
+                    activeCategoryGenderAdo === "fille" ? null : "fille",
                   )
                 }
               >
@@ -169,7 +169,7 @@ const Subnav = ({ isSubNavActive }: SubNavProps) => {
         </ul>
       ) : null}*/}
 
-      {activeCategoryGenderChild === "boy" ? (
+      {activeCategoryGenderChild === "garcon" ? (
         <ul className={styles.navbarSubCategory}>
           {EnfantCategory.map((data, index) => (
             <li key={index}>
@@ -177,7 +177,7 @@ const Subnav = ({ isSubNavActive }: SubNavProps) => {
                 isActive={data.isActive}
                 onClick={() =>
                   handleRouting(
-                    `/shop/${activeCategory}/${activeCategoryGenderChild}/${data.href}`,
+                    `/boutique/${activeCategory}/${activeCategoryGenderChild}/${data.href}`,
                   )
                 }
               >
@@ -188,7 +188,7 @@ const Subnav = ({ isSubNavActive }: SubNavProps) => {
         </ul>
       ) : null}
 
-      {activeCategoryGenderChild === "girl" ? (
+      {activeCategoryGenderChild === "fille" ? (
         <ul className={styles.navbarSubCategory}>
           {EnfantCategory.map((data, index) => (
             <li key={index}>
@@ -196,7 +196,7 @@ const Subnav = ({ isSubNavActive }: SubNavProps) => {
                 isActive={data.isActive}
                 onClick={() =>
                   handleRouting(
-                    `/shop/${activeCategory}/${activeCategoryGenderChild}/${data.href}`,
+                    `/boutique/${activeCategory}/${activeCategoryGenderChild}/${data.href}`,
                   )
                 }
               >
@@ -207,7 +207,7 @@ const Subnav = ({ isSubNavActive }: SubNavProps) => {
         </ul>
       ) : null}
 
-      {activeCategoryGenderAdo === "boy" ? (
+      {activeCategoryGenderAdo === "garcon" ? (
         <ul className={styles.navbarSubCategory}>
           {AdoCategory.map((data, index) => (
             <li key={index}>
@@ -215,7 +215,7 @@ const Subnav = ({ isSubNavActive }: SubNavProps) => {
                 isActive={data.isActive}
                 onClick={() =>
                   handleRouting(
-                    `/shop/${activeCategory}/${activeCategoryGenderAdo}/${data.href}`,
+                    `/boutique/${activeCategory}/${activeCategoryGenderAdo}/${data.href}`,
                   )
                 }
               >
@@ -226,7 +226,7 @@ const Subnav = ({ isSubNavActive }: SubNavProps) => {
         </ul>
       ) : null}
 
-      {activeCategoryGenderAdo === "girl" ? (
+      {activeCategoryGenderAdo === "fille" ? (
         <ul className={styles.navbarSubCategory}>
           {AdoCategory.map((data, index) => (
             <li key={index}>
@@ -234,7 +234,7 @@ const Subnav = ({ isSubNavActive }: SubNavProps) => {
                 isActive={data.isActive}
                 onClick={() =>
                   handleRouting(
-                    `/shop/${activeCategory}/${activeCategoryGenderAdo}/${data.href}`,
+                    `/boutique/${activeCategory}/${activeCategoryGenderAdo}/${data.href}`,
                   )
                 }
               >
@@ -252,7 +252,7 @@ const Subnav = ({ isSubNavActive }: SubNavProps) => {
               <ButtonSecondary
                 isActive={data.isActive}
                 onClick={() =>
-                  handleRouting(`/shop/${activeCategory}/${data.href}`)
+                  handleRouting(`/boutique/${activeCategory}/${data.href}`)
                 }
               >
                 {data.name}
@@ -269,7 +269,7 @@ const Subnav = ({ isSubNavActive }: SubNavProps) => {
               <ButtonSecondary
                 isActive={data.isActive}
                 onClick={() =>
-                  handleRouting(`/shop/${activeCategory}/${data.href}`)
+                  handleRouting(`/boutique/${activeCategory}/${data.href}`)
                 }
               >
                 {data.name}

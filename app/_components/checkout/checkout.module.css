@@ -1,0 +1,33 @@
+.checkout {
+  display: flex;
+  box-shadow: inset 0 0 5px 0 var(--border);
+  flex-direction: column;
+  border-radius: var(--radius);
+  justify-content: space-between;
+  padding: 1rem;
+  width: 100%;
+  height: 100%;
+  p {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.checkoutHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  height: 100%;
+  h2 {
+    text-align: center;
+    text-transform: uppercase;
+  }
+}
+.checkoutFooter {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+}

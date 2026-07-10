@@ -1,7 +1,7 @@
 .main {
   display: flex;
   flex-direction: column;
-  padding-block: 2rem;
+  padding-top: 2rem;
 }
 
 .showcase {
@@ -22,10 +22,10 @@
 .showcaseBento {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 1rem;
+  gap: 2rem;
   width: 100%;
   height: 100%;
-  padding-inline: 20em;
+  padding-inline: 15em;
   /* Select all child element */
   & > * {
     justify-self: center;
