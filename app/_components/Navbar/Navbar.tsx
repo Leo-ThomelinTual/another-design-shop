@@ -1,12 +1,12 @@
 "use client";
 import styles from "./navbar.module.css";
-import ButtonPrimary from "../Utils/Buttons/ButtonPrimary/ButtonPrimary";
+import ButtonPrimary from "../Utils/ButtonPrimary/ButtonPrimary";
 import { useState } from "react";
 import SearchBar from "../SearchBar/SearchBar";
 import { Icon } from "@iconify/react";
 import Subnav from "../Subnav/Subnav";
 import { useRouter } from "next/navigation";
-import ButtonSecondary from "../Utils/Buttons/ButtonsSecondary/ButtonSecondary";
+import ButtonSecondary from "../Utils/ButtonsSecondary/ButtonSecondary";
 
 const Navbar = () => {
   const router = useRouter();

@@ -1,8 +1,8 @@
 import React from "react";
-import styles from "./checkout.module.css";
-import ButtonSecondary from "../Utils/Buttons/ButtonsSecondary/ButtonSecondary";
+import styles from "./Checkout.module.css";
+import ButtonSecondary from "../Utils/ButtonsSecondary/ButtonSecondary";
 
-const checkout = () => {
+const Checkout = () => {
   return (
     <article className={styles.checkout}>
       <div className={styles.checkoutHeader}>
@@ -28,4 +28,4 @@ const checkout = () => {
   );
 };
 
-export default checkout;
+export default Checkout;

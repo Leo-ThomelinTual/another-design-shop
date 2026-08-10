@@ -2,10 +2,10 @@
 
 import styles from "../shop.module.css";
 import { dataCard } from "@/app/_lib/dataCard";
-import ProductCard from "@/app/_components/productCard/ProductCard";
+import ProductCard from "@/app/_components/ProductCard/ProductCard";
 import { use, useState } from "react";
 import FilterBy from "@/app/_components/Sort/Sort";
-import ButtonPrimary from "@/app/_components/Utils/Buttons/ButtonPrimary/ButtonPrimary";
+import ButtonPrimary from "@/app/_components/Utils/ButtonPrimary/ButtonPrimary";
 import FilterII from "@/app/_components/FilterV2/FilterV2";
 import Breadcrumbs from "@/app/_components/Breadcrumbs/Breadcrumbs";
 import { Icon } from "@iconify/react";
@@ -66,9 +66,9 @@ export default function Page({
               <FilterII onPriceChange={handleData} onParams={handleDataSize} />
             </aside>
           ) : null}
-          {/* SHOP Section */}
         </div>
 
+          {/* SHOP Section */}
         <section className={styles.cardContainer}>
           {dataCard.map((data, index) =>
             data.price <= childData &&

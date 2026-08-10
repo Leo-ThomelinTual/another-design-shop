@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import styles from "./Subnav.module.css";
 import { Icon } from "@iconify/react";
-import ButtonSecondary from "../Utils/Buttons/ButtonsSecondary/ButtonSecondary";
+import ButtonSecondary from "../Utils/ButtonsSecondary/ButtonSecondary";
 import {
   AdoCategory,
   EnfantCategory,

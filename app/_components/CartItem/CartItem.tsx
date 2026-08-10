@@ -2,8 +2,8 @@ import styles from "./CartItem.module.css";
 import Image from "next/image";
 import React from "react";
 import Tags from "../Tags/Tags";
-import { Icon } from "@iconify/react";
-import ButtonSecondary from "../Utils/Buttons/ButtonsSecondary/ButtonSecondary";
+import ItemQuantity from "../Utils/ItemQuantity/ItemQuantity";
+import QuickActionButton from "../Utils/QuickActionButton/QuickActionButton";
 
 const CartItem = () => {
   return (
@@ -22,23 +22,9 @@ const CartItem = () => {
           <Tags>Tags</Tags>
         </div>
         <p>Couleur : Blanc</p>
-        <div className={styles.quantityContainer}>
-          <ButtonSecondary>
-            <Icon fontSize={16} icon="mdi:minus" />
-          </ButtonSecondary>
-          <input type="number" defaultValue="1" />
-          <ButtonSecondary>
-            <Icon fontSize={16} icon="mdi:plus" />
-          </ButtonSecondary>
-          <ButtonSecondary isActive={true}>
-            <Icon fontSize={16} icon="mdi:trash-can" />
-          </ButtonSecondary>
-          <ButtonSecondary>
-            <Icon fontSize={16} icon="mdi:heart" />
-          </ButtonSecondary>
-          <ButtonSecondary>
-            <Icon fontSize={16} icon="mdi:star" />
-          </ButtonSecondary>
+        <div className={styles.ButtonContainer}>
+          <ItemQuantity />
+          <QuickActionButton />
         </div>
         <p>99$</p>
       </div>

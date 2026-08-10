@@ -1,0 +1,11 @@
+.QuantityContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  width: max-content;
+  input {
+    text-align: center;
+    width: 100px;
+    border: 2px solid var(--foreground);
+  }
+}

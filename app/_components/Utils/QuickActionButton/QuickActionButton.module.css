@@ -1,0 +1,14 @@
+.RemoveButton {
+  background: var(--danger);
+  color: var(--background);
+  border: 2px solid var(--foreground);
+}
+
+.FavoriteButtonActive {
+  background: var(--danger);
+  color: var(--background);
+}
+.WishlistButtonActive {
+  background: var(--warning);
+  color: var(--background);
+}

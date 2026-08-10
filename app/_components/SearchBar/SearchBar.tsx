@@ -2,7 +2,7 @@ import { usePathname, useSearchParams } from "next/navigation";
 import React from "react";
 import styles from "./SearchBar.module.css";
 import { Icon } from "@iconify/react";
-import ButtonSecondary from "../Utils/Buttons/ButtonsSecondary/ButtonSecondary";
+import ButtonSecondary from "../Utils/ButtonsSecondary/ButtonSecondary";
 
 const SearchBar = () => {
   const pathname = usePathname();
