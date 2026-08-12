@@ -17,12 +17,12 @@ const Checkout = () => {
       </div>
 
       <div className={styles.checkoutFooter}>
-        <input type="text" />
+        <input className={styles.promotionalCode} placeholder="Entrer un code promotionnel" type="text" />
         <hr />
         <p>
           Total à payer : <span>99€</span>
         </p>
-        <ButtonSecondary isActive={true}>Checkout</ButtonSecondary>
+        <ButtonSecondary isActive={false}>Checkout</ButtonSecondary>
       </div>
     </article>
   );

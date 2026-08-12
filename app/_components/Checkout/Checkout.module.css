@@ -14,6 +14,14 @@
   }
 }
 
+.promotionalCode {
+    background-color: var(--background);
+    border: 2px solid var(--border);
+    color: var(--foreground);
+    padding: 0.75rem;
+    text-transform: uppercase;
+}
+
 .checkoutHeader {
   display: flex;
   flex-direction: column;

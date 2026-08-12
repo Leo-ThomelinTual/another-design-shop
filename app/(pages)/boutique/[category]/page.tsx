@@ -6,7 +6,7 @@ import ProductCard from "@/app/_components/ProductCard/ProductCard";
 import { use, useState } from "react";
 import FilterBy from "@/app/_components/Sort/Sort";
 import ButtonPrimary from "@/app/_components/Utils/ButtonPrimary/ButtonPrimary";
-import FilterII from "@/app/_components/FilterV2/FilterV2";
+import Filter from "@/app/_components/Filter/Filter";
 import Breadcrumbs from "@/app/_components/Breadcrumbs/Breadcrumbs";
 import { Icon } from "@iconify/react";
 
@@ -23,6 +23,7 @@ export default function Page({
   const [childData, setChildData] = useState<string>("999");
   const [sizeData, setSizeData] = useState<[string]>();
   const [forData, setForData] = useState<string>();
+
 
   const handleData = (price: string) => {
     setChildData(price);
@@ -63,7 +64,7 @@ export default function Page({
           {/* Filter for the shop */}
           {isFilterActive ? (
             <aside>
-              <FilterII onPriceChange={handleData} onParams={handleDataSize} />
+              <Filter onPriceChange={handleData} onParams={handleDataSize} />
             </aside>
           ) : null}
         </div>

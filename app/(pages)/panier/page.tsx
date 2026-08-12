@@ -6,7 +6,6 @@ import { Icon } from "@iconify/react";
 
 export default function Panier() {
   return (
-    <>
       <main className={styles.main}>
         <section className={styles.cartItemList}>
           <div className={styles.cartButtonContainer}>
@@ -21,16 +20,10 @@ export default function Panier() {
           </div>
           <CartItem />
           <CartItem />
-          <CartItem />
-          <CartItem />
-          <CartItem />
-          <CartItem />
-          <CartItem />
         </section>
         <section className={styles.checkoutContainer}>
           <Checkout />
         </section>
       </main>
-    </>
   );
 }

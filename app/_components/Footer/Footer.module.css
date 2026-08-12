@@ -7,7 +7,6 @@
 .footerContent {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-
   gap: 2rem;
   box-shadow: inset 0 0 10px 0 gray;
   padding: 2rem;
@@ -17,11 +16,17 @@
 
 .footerContentContainer {
   display: flex;
-  grid-column: span 3;
+  grid-column: span 1;
   flex-direction: column;
   text-align: center;
   text-transform: uppercase;
   gap: 1rem;
   width: 100%;
   height: 300px;
+}
+
+@media (max-width: 1280px) {
+    .footerContentContainer {
+        grid-column: span 3;
+    }
 }

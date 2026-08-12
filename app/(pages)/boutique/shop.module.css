@@ -22,11 +22,11 @@
   display: flex;
   flex-wrap: wrap;
   grid-column: span 5;
-
+  gap: 1rem;
   width: 100%;
   height: 100vh;
   overflow-y: scroll;
-  justify-content: space-between;
+  /*justify-content: space-between;*/
 }
 
 .filterContainer {

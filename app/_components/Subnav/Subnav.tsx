@@ -1,11 +1,12 @@
 "use client";
-import React, { useState } from "react";
+import { useState } from "react";
 import styles from "./Subnav.module.css";
 import { Icon } from "@iconify/react";
 import ButtonSecondary from "../Utils/ButtonsSecondary/ButtonSecondary";
 import {
-  AdoCategory,
+  dataCategory,
   EnfantCategory,
+  AdoCategory,
   FemmeCategory,
   HommeCategory,
 } from "@/app/_lib/dataSubNav";
@@ -18,17 +19,14 @@ type SubNavProps = {
 const Subnav = ({ isSubNavActive }: SubNavProps) => {
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
 
-  const [activeCategoryGenderChild, setActiveCategoryGenderChild] = useState<
-    string | null
-  >(null);
-  const [activeCategoryGenderAdo, setActiveCategoryGenderAdo] = useState<
-    string | null
-  >(null);
+  const [activeCategoryGenderChild, setActiveCategoryGenderChild] = useState<string | null>(null);
+  const [activeCategoryGenderAdo, setActiveCategoryGenderAdo] = useState<string | null>(null);
   const router = useRouter();
 
   const handleRouting = (href: string) => {
     router.push(href);
   };
+
   return (
     <div
       className={
@@ -38,50 +36,14 @@ const Subnav = ({ isSubNavActive }: SubNavProps) => {
       }
     >
       <ul className={styles.navbarCategory}>
-        <li>
-          <ButtonSecondary
-            isActive={activeCategory === `enfant` ? true : false}
-            onClick={() =>
-              setActiveCategory(activeCategory === "enfant" ? null : "enfant")
-            }
-          >
-            <Icon icon="mdi:chevron-double-left" />
-            Enfants (0 à 12 ans)
-          </ButtonSecondary>
-        </li>
-        <li>
-          <ButtonSecondary
-            isActive={activeCategory === `ado` ? true : false}
-            onClick={() =>
-              setActiveCategory(activeCategory === "ado" ? null : "ado")
-            }
-          >
-            <Icon icon="mdi:chevron-double-left" />
-            Ado
-          </ButtonSecondary>
-        </li>
-        <li>
-          <ButtonSecondary
-            isActive={activeCategory === `homme` ? true : false}
-            onClick={() =>
-              setActiveCategory(activeCategory === "homme" ? null : "homme")
-            }
-          >
-            <Icon icon="mdi:chevron-double-left" />
-            Homme
-          </ButtonSecondary>
-        </li>
-        <li>
-          <ButtonSecondary
-            isActive={activeCategory === `femme` ? true : false}
-            onClick={() =>
-              setActiveCategory(activeCategory === "femme" ? null : "femme")
-            }
-          >
-            <Icon icon="mdi:chevron-double-left" />
-            Femme
-          </ButtonSecondary>
-        </li>
+        {dataCategory.map((data, index) => (
+          <li key={index}>
+            <ButtonSecondary isActive={activeCategory === data.type ? true : false} onClick={() => setActiveCategory(activeCategory === data.type ? null : data.type)}>
+              <Icon icon="mdi:chevron-double-left" />
+              {data.title}
+            </ButtonSecondary>
+          </li>
+        ))}
       </ul>
 
       {/* SubCategory */}

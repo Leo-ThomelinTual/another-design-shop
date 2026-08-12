@@ -1,43 +1,17 @@
 import styles from "./page.module.css";
-import Image from "next/image";
-import Link from "next/link";
-import HeroBanner from "../../_components/HeroBanner/HeroBanner";
+import Banner from "@/app/_components/Banner/Banner";
 
 export default function Home() {
   return (
     <>
       <header>
-        <HeroBanner image="/img/Banner-1.jpg" alt="" />
+        <Banner src="/img/Banner-1.jpg" />
       </header>
       <main className={styles.main}>
         <section className={styles.showcaseBento}>
-          <Link className={styles.imageBannerLink} href="/femme">
-            <Image
-              className={styles.imageBanner}
-              src="/img/Banner-1.jpg"
-              alt=""
-              width={2226}
-              height={500}
-            />
-          </Link>
-          <Link className={styles.imageBoxLink} href="/ado">
-            <Image
-              className={styles.imageBox}
-              src="/img/Banner-2.jpg"
-              alt=""
-              width={1105}
-              height={500}
-            />
-          </Link>
-          <Link className={styles.imageBoxLink} href="/ado">
-            <Image
-              className={styles.imageBox}
-              src="/img/Banner-2.jpg"
-              alt=""
-              width={1105}
-              height={500}
-            />
-          </Link>
+          <Banner className={styles.colspan4} src="/img/Banner-1.jpg" href="/boutique/femme" alt="test" />
+          <Banner className={styles.colspan2} src="/img/Banner-2.jpg" alt="test" />
+          <Banner className={styles.colspan2} src="/img/Banner-2.jpg" alt="test" />
         </section>
       </main>
     </>

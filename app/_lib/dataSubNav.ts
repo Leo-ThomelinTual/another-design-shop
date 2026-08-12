@@ -1,3 +1,22 @@
+export const dataCategory = [
+  {
+    type: "enfant",
+    title: "Enfants (0 à 12 ans)"
+  },
+  {
+    type: "ado",
+    title: "Ado"
+  },
+  {
+    type: "homme",
+    title: "Homme"
+  },
+  {
+    type: "femme",
+    title: "Femme"
+  }
+]
+
 export const HommeCategory = [
   {
     name: "Voir tout",

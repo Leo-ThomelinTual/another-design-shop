@@ -1,6 +1,5 @@
 import styles from "./CartItem.module.css";
 import Image from "next/image";
-import React from "react";
 import Tags from "../Tags/Tags";
 import ItemQuantity from "../Utils/ItemQuantity/ItemQuantity";
 import QuickActionButton from "../Utils/QuickActionButton/QuickActionButton";

@@ -1,16 +1,23 @@
+import Link from "next/link";
 import styles from "./Banner.module.css";
 import Image from "next/image";
 
 interface BannerProps {
-  image: string,
-  alt: string
+  src?: string,
+  alt?: string,
+  href?: string,
+  className?: string
 }
 
-const Banner = ({ image, alt }: BannerProps) => {
+const Banner = ({ src, alt, href, className }: BannerProps) => {
   return (
-    <div>
-      <Image className={styles.banner} src={image} alt={alt} fill loading="eager" />
-    </div>
+    <article className={styles.bannerContainer + " " + className}>
+      {src ?
+        <Link href={href ? href : "/"}>
+        <Image className={styles.banner} src={src} alt={alt ? alt : "Pas de description disponible"} fill loading="eager" />
+        </Link>
+        : null}
+    </article>
   );
 };
 

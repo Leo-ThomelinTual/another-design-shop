@@ -1,69 +1,50 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import { useState } from "react";
 import styles from "./Filter.module.css";
 import { brands, sizes, sizeShoes } from "@/app/_lib/dataFilter";
 
-interface FilterProps {
-  onPriceChange: (price: number) => void;
-  onParams: (size: [string]) => void;
-}
+type FilterProps = {
+  onPriceChange: (price: string) => void;
+};
 
-// {
-//   onPriceChange,
-// }: {
-//   onPriceChange: (price: number) => void;
-// },
-// { onParams }: { onParams: (size: [string, string]) => void },
+const Filter = ({ onPriceChange }: FilterProps) => {
+  const [filterPrice, setFilterPrice] = useState<string>("500");
 
-const Filter = ({ onPriceChange, onParams }: FilterProps) => {
-  const [filterPrice, setFilterPrice] = useState<number>(500);
-  const [isChecked, setIsChecked] = useState<string>("true");
-
-  const handleInputChangePrice = (
-    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
-  ) => {
-    const newPrice = +event.target.value;
+  const handleInputChangePrice = (e: string) => {
+    const newPrice = e;
     setFilterPrice(newPrice);
     onPriceChange(newPrice);
   };
 
-  useEffect(() => {
-    const price_value = document.querySelector("#price_range_value");
-    const conv = filterPrice as unknown;
-    if (price_value !== null) {
-      price_value.textContent = conv as string;
-    }
-  });
+  // const [isChecked, setIsChecked] = useState<string>("true");
+  // const handleInputChangeCheckbox = (
+  //   event: React.ChangeEvent<HTMLInputElement>,
+  // ) => {
+  //   // setIsChecked({
+  //   //   ...isChecked,
+  //   //   [event.target.name]: event.target.value,
+  //   //   [event.target.name]: event.target.checked,
+  //   // });
+  //   setIsChecked(event.target.value);
+  //   onParams([event.target.value]);
 
-  const handleInputChangeCheckbox = (
-    event: React.ChangeEvent<HTMLInputElement>,
-  ) => {
-    // setIsChecked({
-    //   ...isChecked,
-    //   [event.target.name]: event.target.value,
-    //   [event.target.name]: event.target.checked,
-    // });
-    setIsChecked(event.target.value);
-    onParams([event.target.value]);
-
-    // setIsChecked(() => !isChecked);
-    console.log(
-      // event.target.name,
-      event.target.value,
-      event.target.checked,
-      isChecked,
-    );
-  };
-
+  //   // setIsChecked(() => !isChecked);
+  //   console.log(
+  //     // event.target.name,
+  //     event.target.value,
+  //     event.target.checked,
+  //     isChecked,
+  //   );
+  // };
   return (
     <div className={styles.filterContainer}>
       <ul className={styles.rowFilterList}>
         <li className={styles.filterListPrice}>
           <label htmlFor="price">
-            Prix &gt; <output id="price_range_value"></output>€
+            Prix &gt; <output>{filterPrice}</output>€
           </label>
           <input
-            onChange={(event) => handleInputChangePrice(event)}
+            onChange={(e) => handleInputChangePrice(e.target.value)}
             type="range"
             id="price_range"
             name="price"
