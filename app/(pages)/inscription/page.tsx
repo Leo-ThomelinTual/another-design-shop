@@ -15,7 +15,7 @@ export default function Inscription() {
           <ButtonSecondary className={styles.colspan2}>
             S'inscrire
           </ButtonSecondary>
-          <Link href="/connexion">Vous avez déja un compte ? Cliquez ici.</Link>
+          <Link className={styles.colspan2} href="/connexion">Vous avez déja un compte ? Cliquez ici.</Link>
         </form>
       </main>
     </>

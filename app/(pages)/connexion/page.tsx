@@ -14,7 +14,7 @@ export default function Connexion() {
           <ButtonSecondary className={styles.colspan2}>
             Connexion
           </ButtonSecondary>
-          <Link href="/inscription">Vous n'avez pas encore de compte ? Cliquez ici.</Link>
+          <Link className={styles.colspan2} href="/inscription">Vous n'avez pas encore de compte ? Cliquez ici.</Link>
         </form>
       </main>
     </>

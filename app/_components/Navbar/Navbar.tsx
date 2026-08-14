@@ -22,7 +22,7 @@ const Navbar = () => {
     <nav className={styles.navbar}>
       <ul className={styles.navbarItemContainer}>
         <li onClick={() => handleRouting("/")} className={styles.navbarItem}>
-          <h1>brand</h1>
+          <h1 className={styles.navbarTitle}>brand</h1>
         </li>
         <li className={styles.navbarItem}>
           <Suspense>

@@ -27,6 +27,10 @@
   }
 }
 
+.navbarTitle {
+    cursor: pointer;
+}
+
 .navbarItemContainerMobile {
   position: fixed;
   top: 0;
