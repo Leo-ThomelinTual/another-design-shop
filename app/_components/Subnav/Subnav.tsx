@@ -18,10 +18,11 @@ type SubNavProps = {
 
 const Subnav = ({ isSubNavActive }: SubNavProps) => {
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
+  const [activeCategoryGender, setActiveCategoryGender] = useState<"garcon" | "fille" | null>(null);
 
-  const [activeCategoryGenderChild, setActiveCategoryGenderChild] = useState<string | null>(null);
-  const [activeCategoryGenderAdo, setActiveCategoryGenderAdo] = useState<string | null>(null);
   const router = useRouter();
+
+  console.log(activeCategory)
 
   const handleRouting = (href: string) => {
     router.push(href);
@@ -48,164 +49,81 @@ const Subnav = ({ isSubNavActive }: SubNavProps) => {
 
       {/* SubCategory */}
 
-      {activeCategory === "enfant" ? (
-        <div>
-          <ul className={styles.navbarCategory}>
-            <li>
-              <ButtonSecondary
-                isActive={activeCategoryGenderChild === `garcon` ? true : false}
-                onClick={() =>
-                  setActiveCategoryGenderChild(
-                    activeCategoryGenderChild === "garcon" ? null : "garcon",
-                  )
-                }
-              >
-                <Icon icon="mdi:chevron-double-left" />
-                Garçon
-              </ButtonSecondary>
-            </li>
-            <li>
-              <ButtonSecondary
-                isActive={activeCategoryGenderChild === `fille` ? true : false}
-                onClick={() =>
-                  setActiveCategoryGenderChild(
-                    activeCategoryGenderChild === "fille" ? null : "fille",
-                  )
-                }
-              >
-                <Icon icon="mdi:chevron-double-left" />
-                Fille
-              </ButtonSecondary>
-            </li>
+      {activeCategory !== null && activeCategory !== "homme" && activeCategory !== "femme" ? (
+          (activeCategory === "enfant" || activeCategory === "ado" ? (
+            <div>
+              <ul className={styles.navbarCategory}>
+                <li>
+                  <ButtonSecondary
+                    isActive={activeCategoryGender === `garcon` ? true : false}
+                    onClick={() =>
+                      setActiveCategoryGender(
+                        activeCategoryGender === "garcon" ? null : "garcon",
+                      )
+                    }
+                  >
+                    <Icon icon="mdi:chevron-double-left" />
+                    Garçon
+                  </ButtonSecondary>
+                </li>
+                <li>
+                  <ButtonSecondary
+                    isActive={activeCategoryGender === `fille` ? true : false}
+                    onClick={() =>
+                      setActiveCategoryGender(
+                        activeCategoryGender === "fille" ? null : "fille",
+                      )
+                    }
+                  >
+                    <Icon icon="mdi:chevron-double-left" />
+                    Fille
+                  </ButtonSecondary>
+                </li>
+              </ul>
+            </div>
+          ) : null)
+      ) : null}
+
+
+      {activeCategoryGender === "garcon" || activeCategoryGender === "fille" ?
+        (activeCategory === "enfant" ?
+          <ul className={styles.navbarSubCategory}>
+            {EnfantCategory.map((data, index) => (
+              <li key={index}>
+                <ButtonSecondary
+                  isActive={data.isActive}
+                  onClick={() =>
+                    handleRouting(
+                      `/boutique/${activeCategory}/${activeCategoryGender}/${data.href}`,
+                    )
+                  }
+                >
+                  {data.name}
+                </ButtonSecondary>
+              </li>
+            ))}
           </ul>
-        </div>
-      ) : null}
-
-      {activeCategory === "ado" ? (
-        <div>
-          <ul className={styles.navbarCategory}>
-            <li>
-              <ButtonSecondary
-                isActive={activeCategoryGenderAdo === `garcon` ? true : false}
-                onClick={() =>
-                  setActiveCategoryGenderAdo(
-                    activeCategoryGenderAdo === "garcon" ? null : "garcon",
-                  )
-                }
-              >
-                <Icon icon="mdi:chevron-double-left" />
-                Garçon
-              </ButtonSecondary>
-            </li>
-            <li>
-              <ButtonSecondary
-                isActive={activeCategoryGenderAdo === `fille` ? true : false}
-                onClick={() =>
-                  setActiveCategoryGenderAdo(
-                    activeCategoryGenderAdo === "fille" ? null : "fille",
-                  )
-                }
-              >
-                <Icon icon="mdi:chevron-double-left" />
-                Fille
-              </ButtonSecondary>
-            </li>
+          :
+          (activeCategory === "ado" ?
+          <ul className={styles.navbarSubCategory}>
+            {AdoCategory.map((data, index) => (
+              <li key={index}>
+                <ButtonSecondary
+                  isActive={data.isActive}
+                  onClick={() =>
+                    handleRouting(
+                      `/boutique/${activeCategory}/${activeCategoryGender}/${data.href}`,
+                    )
+                  }
+                >
+                  {data.name}
+                </ButtonSecondary>
+              </li>
+            ))}
           </ul>
-        </div>
-      ) : null}
-
-      {/*{activeCategory === "enfant" ? (
-        <ul className={styles.navbarSubCategory}>
-          {EnfantCategory.map((data, index) => (
-            <li key={index}>
-              <ButtonSecondary
-                isActive={data.isActive}
-                onClick={() =>
-                  handleRouting(`/shop/${activeCategory}/${data.href}`)
-                }
-              >
-                {data.name}
-              </ButtonSecondary>
-            </li>
-          ))}
-        </ul>
-      ) : null}*/}
-
-      {activeCategoryGenderChild === "garcon" ? (
-        <ul className={styles.navbarSubCategory}>
-          {EnfantCategory.map((data, index) => (
-            <li key={index}>
-              <ButtonSecondary
-                isActive={data.isActive}
-                onClick={() =>
-                  handleRouting(
-                    `/boutique/${activeCategory}/${activeCategoryGenderChild}/${data.href}`,
-                  )
-                }
-              >
-                {data.name}
-              </ButtonSecondary>
-            </li>
-          ))}
-        </ul>
-      ) : null}
-
-      {activeCategoryGenderChild === "fille" ? (
-        <ul className={styles.navbarSubCategory}>
-          {EnfantCategory.map((data, index) => (
-            <li key={index}>
-              <ButtonSecondary
-                isActive={data.isActive}
-                onClick={() =>
-                  handleRouting(
-                    `/boutique/${activeCategory}/${activeCategoryGenderChild}/${data.href}`,
-                  )
-                }
-              >
-                {data.name}
-              </ButtonSecondary>
-            </li>
-          ))}
-        </ul>
-      ) : null}
-
-      {activeCategoryGenderAdo === "garcon" ? (
-        <ul className={styles.navbarSubCategory}>
-          {AdoCategory.map((data, index) => (
-            <li key={index}>
-              <ButtonSecondary
-                isActive={data.isActive}
-                onClick={() =>
-                  handleRouting(
-                    `/boutique/${activeCategory}/${activeCategoryGenderAdo}/${data.href}`,
-                  )
-                }
-              >
-                {data.name}
-              </ButtonSecondary>
-            </li>
-          ))}
-        </ul>
-      ) : null}
-
-      {activeCategoryGenderAdo === "fille" ? (
-        <ul className={styles.navbarSubCategory}>
-          {AdoCategory.map((data, index) => (
-            <li key={index}>
-              <ButtonSecondary
-                isActive={data.isActive}
-                onClick={() =>
-                  handleRouting(
-                    `/boutique/${activeCategory}/${activeCategoryGenderAdo}/${data.href}`,
-                  )
-                }
-              >
-                {data.name}
-              </ButtonSecondary>
-            </li>
-          ))}
-        </ul>
-      ) : null}
+          : null))
+      : null
+      }
 
       {activeCategory === "homme" ? (
         <ul className={styles.navbarSubCategory}>

@@ -3,14 +3,13 @@
   grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
   width: 100%;
-  padding: 5rem;
-  height: 95vh;
-  overflow-y: hidden;
+  padding-inline: 2rem;
+  height: 90vh;
 }
 
 .cartItemList {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   flex-wrap: wrap;
   gap: 2rem;
   grid-column: span 3;
@@ -31,7 +30,7 @@
   gap: 1rem;
   justify-content: end;
   width: 100%;
-  height: 50px;
+  padding: 0.75rem;
   background-color: var(--background-transparent);
   backdrop-filter: blur(10px);
   button {

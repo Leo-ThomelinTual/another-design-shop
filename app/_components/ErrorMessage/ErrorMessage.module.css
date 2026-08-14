@@ -1,0 +1,23 @@
+.NotificationContainer {
+    padding: 1rem;
+    border-radius: var(--radius);
+    backdrop-filter: blur(10px);
+}
+
+.error {
+    border: 2px solid var(--danger);
+    background: var(--danger-glass);
+    color: var(--background);
+}
+
+.warning {
+    border: 2px solid var(--warning);
+    background: var(--warning-glass);
+    color: var(--background);
+}
+
+.success {
+    border: 2px solid var(--success);
+    background: var(--success-glass);
+    color: var(--foreground);
+}

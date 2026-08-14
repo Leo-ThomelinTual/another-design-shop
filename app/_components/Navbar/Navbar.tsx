@@ -14,23 +14,6 @@ const Navbar = () => {
     useState<boolean>(false);
   const [isMenuActive, setIsMenuActive] = useState<boolean>(false);
 
-  // const [isSubCategoryFemaleActive, setIsSubCategoryFemaleActive] =
-  //   useState<boolean>(false);
-  // const [isSubCategoryMaleActive, setIsSubCategoryMaleActive] =
-  //   useState<boolean>(false);
-  // const [isSubCategoryAdoActive, setIsSubCategoryAdoActive] =
-  //   useState<boolean>(false);
-  // const [isSubCategoryChildActive, setIsSubCategoryChildActive] =
-  //   useState<boolean>(false);
-
-  // const CloseAll = () => {
-  //   setIsNavbarShopCategoryActive(false);
-  //   setIsSubCategoryAdoActive(false);
-  //   setIsSubCategoryChildActive(false);
-  //   setIsSubCategoryFemaleActive(false);
-  //   setIsSubCategoryMaleActive(false);
-  // };
-
   const handleRouting = (href: string) => {
     router.push(href);
   };
