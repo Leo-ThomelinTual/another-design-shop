@@ -13,8 +13,8 @@ const Banner = ({ src, alt, href, className }: BannerProps) => {
   return (
     <article className={styles.bannerContainer + " " + className}>
       {src ?
-        <Link href={href ? href : "/"}>
-        <Image className={styles.banner} src={src} alt={alt ? alt : "Pas de description disponible"} fill loading="eager" />
+        <Link className={styles.imageContainer} href={href ? href : "/"}>
+        <Image className={styles.banner} src={src} alt={alt ? alt : "Pas de description disponible"} fill sizes="50" loading="eager" />
         </Link>
         : null}
     </article>

@@ -4,17 +4,20 @@ import styles from "./Filter.module.css";
 import { brands, sizes, sizeShoes } from "@/app/_lib/dataFilter";
 
 type FilterProps = {
-  onPriceChange: (price: string) => void;
+  onPriceChange: (price: number) => void;
 };
 
 const Filter = ({ onPriceChange }: FilterProps) => {
-  const [filterPrice, setFilterPrice] = useState<string>("500");
+  const [filterPrice, setFilterPrice] = useState<number>(500);
 
-  const handleInputChangePrice = (e: string) => {
-    const newPrice = e;
-    setFilterPrice(newPrice);
-    onPriceChange(newPrice);
+  const handleInputChangePrice = (e: number) => {
+    setFilterPrice(e);
+    onPriceChange(e);
   };
+
+  const handleInputChangeCheckbox = () => (
+    console.log("temp")
+  )
 
   // const [isChecked, setIsChecked] = useState<string>("true");
   // const handleInputChangeCheckbox = (
@@ -44,7 +47,7 @@ const Filter = ({ onPriceChange }: FilterProps) => {
             Prix &gt; <output>{filterPrice}</output>€
           </label>
           <input
-            onChange={(e) => handleInputChangePrice(e.target.value)}
+            onChange={(e) => handleInputChangePrice(+e.target.value)}
             type="range"
             id="price_range"
             name="price"
@@ -67,7 +70,7 @@ const Filter = ({ onPriceChange }: FilterProps) => {
             <input
               type="checkbox"
               name={size.sizeName}
-              onChange={(event) => handleInputChangeCheckbox(event)}
+              onChange={(event) => handleInputChangeCheckbox()} // (event)
             />
             <label className={styles.sizeNameLabel} htmlFor={size.sizeName}>
               {size.sizeName}
@@ -83,7 +86,7 @@ const Filter = ({ onPriceChange }: FilterProps) => {
             <input
               type="checkbox"
               name={brand.name}
-              onChange={(event) => handleInputChangeCheckbox(event)}
+              onChange={(event) => handleInputChangeCheckbox()}
             />
             <label htmlFor={brand.name}>{brand.name}</label>
           </li>
@@ -96,7 +99,7 @@ const Filter = ({ onPriceChange }: FilterProps) => {
             <input
               type="checkbox"
               name={sizeShoe.sizeShoes}
-              onChange={(event) => handleInputChangeCheckbox(event)}
+              onChange={(event) => handleInputChangeCheckbox()}
             />
             <label htmlFor={sizeShoe.sizeShoes}>{sizeShoe.sizeShoes}</label>
           </li>

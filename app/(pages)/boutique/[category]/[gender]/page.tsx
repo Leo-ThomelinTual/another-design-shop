@@ -20,11 +20,11 @@ export default function Page({
   const { category, gender } = use(params);
   const { query } = use(searchParams);
   const [isFilterActive, setFilterAsActive] = useState<boolean>(false);
-  const [childData, setChildData] = useState<string>("999");
+  const [childData, setChildData] = useState<number>(999);
   const [sizeData, setSizeData] = useState<[string]>();
   const [forData, setForData] = useState<string>();
 
-  const handleData = (price: string) => {
+  const handleData = (price: number) => {
     setChildData(price);
   };
   const handleDataSize = (size: [string]) => {
@@ -63,11 +63,12 @@ export default function Page({
           {/* Filter for the shop */}
           {isFilterActive ? (
             <aside>
-              <Filter onPriceChange={handleData} onParams={handleDataSize} />
+              <Filter onPriceChange={handleData} />
             </aside>
           ) : null}
           {/* SHOP Section */}
         </div>
+
 
         <section className={styles.cardContainer}>
           {dataCard.map((data, index) =>
@@ -83,11 +84,12 @@ export default function Page({
                 description={data.description}
                 link={data.link}
                 price={data.price}
-                size={data.size}
+                // size={data.size}
                 tags={data.tags}
               />
             ) : null,
           )}
+
         </section>
       </div>
     </>

@@ -1,7 +1,7 @@
 "use client";
 import styles from "./navbar.module.css";
 import ButtonPrimary from "../Utils/ButtonPrimary/ButtonPrimary";
-import { useState } from "react";
+import { Suspense, useState } from "react";
 import SearchBar from "../SearchBar/SearchBar";
 import { Icon } from "@iconify/react";
 import Subnav from "../Subnav/Subnav";
@@ -25,7 +25,9 @@ const Navbar = () => {
           <h1>brand</h1>
         </li>
         <li className={styles.navbarItem}>
-          <SearchBar />
+          <Suspense>
+            <SearchBar />
+          </Suspense>
         </li>
         <li className={styles.navbarItem}>
           <ButtonPrimary onClick={() => handleRouting("/")}>
@@ -48,6 +50,7 @@ const Navbar = () => {
           <ButtonPrimary onClick={() => handleRouting("/panier")}>
             Panier
             <Icon fontSize={24} icon="mdi:cart" />
+            (0)
           </ButtonPrimary>
         </li>
 

@@ -5,7 +5,7 @@ interface ButtonSecondaryProps {
   children: React.ReactNode;
   className?: string;
   isActive?: boolean | false;
-  onClick?: (e) => void;
+  onClick?: () => void;
 }
 
 const ButtonSecondary = ({

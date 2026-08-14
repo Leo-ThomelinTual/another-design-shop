@@ -22,10 +22,6 @@ export default function Panier() {
         <CartItem />
         <CartItem />
         <CartItem />
-        <CartItem />
-      <CartItem />
-      <CartItem />
-      <CartItem />
         </section>
         <section className={styles.checkoutContainer}>
           <Checkout />

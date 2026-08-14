@@ -70,13 +70,13 @@ a {
   text-decoration: none;
 }
 
-input, button {
+input {
     outline: 2px solid transparent;
     outline-offset: 0;
     transition: outline 0.5s ease, border 0.5s ease, outline-offset 0.5s ease;
 }
 
-input:focus, button:focus {
+input:focus {
     border: 2px solid none;
     outline: 2px solid var(--foreground);
     outline-offset: 2px;
