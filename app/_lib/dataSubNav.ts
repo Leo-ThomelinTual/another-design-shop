@@ -44,7 +44,7 @@ export const HommeCategory = [
     href: "sous-vetement",
   },
   {
-    name: "Short / Bermuda / Jupe",
+    name: "Short / Bermuda",
     href: "short",
   },
   {

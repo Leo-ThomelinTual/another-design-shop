@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import Navbar from "../_components/Navbar/Navbar";
-import Footer from "../_components/Footer/Footer";
+import Navbar from "../_components/common/navbar/navbar";
+import Footer from "../_components/common/footer/footer";
 
 export const metadata: Metadata = {
   title: "Another Design Shop",

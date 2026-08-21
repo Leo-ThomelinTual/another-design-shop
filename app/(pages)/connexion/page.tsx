@@ -1,6 +1,6 @@
-import Input from "@/app/_components/Input/Input";
+import Input from "@/app/_components/ui/input/input";
 import styles from "./page.module.css";
-import ButtonSecondary from "@/app/_components/Utils/ButtonsSecondary/ButtonSecondary";
+import ButtonSecondary from "@/app/_components/ui/button-secondary/button-secondary";
 import Link from "next/link";
 
 export default function Connexion() {

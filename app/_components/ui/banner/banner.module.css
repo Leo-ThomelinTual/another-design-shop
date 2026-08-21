@@ -1,0 +1,12 @@
+.bannerContainer {
+    position: relative;
+    box-shadow: inset 0 0 5px 0 var(--border);
+    background-color: transparent;
+    overflow: hidden;
+    width: 100%;
+    height: 500px;
+}
+
+.imageContainer {
+    width: 100%;
+}

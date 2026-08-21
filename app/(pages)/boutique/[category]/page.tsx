@@ -2,12 +2,12 @@
 
 import styles from "../shop.module.css";
 import { dataCard } from "@/app/_lib/dataCard";
-import ProductCard from "@/app/_components/ProductCard/ProductCard";
+import ProductCard from "@/app/_components/ui/product-card/product-card";
 import { use, useState } from "react";
-import FilterBy from "@/app/_components/Sort/Sort";
-import ButtonPrimary from "@/app/_components/Utils/ButtonPrimary/ButtonPrimary";
-import Filter from "@/app/_components/Filter/Filter";
-import Breadcrumbs from "@/app/_components/Breadcrumbs/Breadcrumbs";
+import FilterBy from "@/app/_components/ui/sort/sort";
+import ButtonPrimary from "@/app/_components/ui/button-primary/button-primary";
+import Filter from "@/app/_components/ui/filter/filter";
+import Breadcrumbs from "@/app/_components/ui/breadcrumbs/breadcrumbs";
 import { Icon } from "@iconify/react";
 
 export default function Page({

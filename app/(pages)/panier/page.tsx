@@ -1,7 +1,7 @@
-import Checkout from "@/app/_components/Checkout/Checkout";
+import Checkout from "@/app/_components/common/checkout/checkout";
 import styles from "./page.module.css";
-import CartItem from "@/app/_components/CartItem/CartItem";
-import ButtonSecondary from "@/app/_components/Utils/ButtonsSecondary/ButtonSecondary";
+import CartItem from "@/app/_components/common/cart-item/cart-item";
+import ButtonSecondary from "@/app/_components/ui/button-secondary/button-secondary";
 import { Icon } from "@iconify/react";
 
 export default function Panier() {

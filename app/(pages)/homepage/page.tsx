@@ -1,5 +1,5 @@
 import styles from "./page.module.css";
-import Banner from "@/app/_components/Banner/Banner";
+import Banner from "@/app/_components/ui/banner/banner";
 
 export default function Home() {
   return (
