@@ -3,6 +3,7 @@
   flex-direction: row;
   gap: 1rem;
   width: max-content;
+  height: max-content;
   input {
     text-align: center;
     width: 100px;

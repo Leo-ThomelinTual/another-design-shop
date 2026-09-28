@@ -1,0 +1,90 @@
+.detailGrid {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr max-content;
+    gap: 2rem;
+    width: 100%;
+    height: 84vh;
+}
+
+.detailImageContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    height: max-content;
+    grid-column: span 1;
+    grid-row: span 1;
+}
+.image {
+    grid-column: span 2;
+    width: 100%;
+}
+
+.detailDescription {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    grid-column: span 1;
+    grid-row: span 1;
+    h2 {
+        font-weight: bold;
+        font-size: 2rem;
+    }
+}
+
+.details {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 1rem;
+    width: 100%;
+    height: 100%;
+    box-shadow: inset 0 0 5px 5px var(--border-muted);
+}
+
+.price {
+    display: flex;
+    width: max-content;
+    align-self: end;
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+.detailButton {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    height: 100%;
+    align-items: end;
+    gap: 1rem;
+}
+
+.buttonBuy {
+    width: 300px !important;
+    font-weight: bold;
+}
+
+.buttonPrice {
+    display: flex;
+    flex-direction: column;
+    height: max-content;
+}
+
+
+.detailFooter {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 2rem;
+    width: 100%;
+    height: max-content;
+    align-self: end;
+    justify-content: space-between;
+    grid-column: span 3;
+    grid-row: span 1;
+    :first-child {
+        width: max-content;
+        align-self: end;
+    }
+}

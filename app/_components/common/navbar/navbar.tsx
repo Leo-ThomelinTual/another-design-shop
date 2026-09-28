@@ -8,7 +8,12 @@ import Subnav from "../subnav/subnav";
 import { useRouter } from "next/navigation";
 import ButtonSecondary from "../../ui/button-secondary/button-secondary";
 
-const Navbar = () => {
+
+type NavbarProps = {
+  cartItem?: number;
+}
+
+const Navbar = ( {cartItem}:NavbarProps ) => {
   const router = useRouter();
   const [isNavbarShopCategoryActive, setIsNavbarShopCategoryActive] =
     useState<boolean>(false);
@@ -46,13 +51,15 @@ const Navbar = () => {
           </ButtonPrimary>
         </li>
 
-        <li className={styles.navbarItem}>
-          <ButtonPrimary onClick={() => handleRouting("/panier")}>
-            Panier
-            <Icon fontSize={24} icon="mdi:cart" />
-            (0)
-          </ButtonPrimary>
-        </li>
+        {/*{cartItem <= -1 ? (*/}
+          <li className={styles.navbarItem}>
+            <ButtonPrimary onClick={() => handleRouting("/panier")}>
+              Panier
+              <Icon fontSize={24} icon="mdi:cart" />
+              (0)
+            </ButtonPrimary>
+          </li>
+        {/*): null}*/}
 
         <li className={styles.navbarItem}>
           <ButtonPrimary onClick={() => handleRouting("/connexion")}>

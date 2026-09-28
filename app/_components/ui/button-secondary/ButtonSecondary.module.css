@@ -9,12 +9,13 @@
   padding-block: 0.75rem;
   padding-inline: 0.75rem;
   width: 100%;
+  height: max-content;
   font-size: 1rem;
   text-transform: uppercase;
   cursor: pointer;
   background: none;
   color: var(--foreground);
-  border: 2px solid;
+  border: 2px solid var(--foreground);
   transition: gap 0.3s ease;
   /* > * {
     color: transparent;

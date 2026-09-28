@@ -41,8 +41,8 @@ const ProductCard = ({
           ))}
         </div>
         <p>
-          {description.length > 200
-            ? `${description.substring(0, 200)} ...`
+          {description.length > 150
+            ? `${description.substring(0, 150)} ...`
             : description}
         </p>
         <p className={styles.cardPrice}>{price}€</p>

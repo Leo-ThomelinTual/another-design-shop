@@ -5,9 +5,11 @@ import { brands, sizes, sizeShoes } from "@/app/_lib/dataFilter";
 
 type FilterProps = {
   onPriceChange: (price: number) => void;
+  isFilterActive: boolean;
+  className?: string;
 };
 
-const Filter = ({ onPriceChange }: FilterProps) => {
+const Filter = ({ onPriceChange, isFilterActive, className }: FilterProps) => {
   const [filterPrice, setFilterPrice] = useState<number>(500);
 
   const handleInputChangePrice = (e: number) => {
@@ -39,8 +41,8 @@ const Filter = ({ onPriceChange }: FilterProps) => {
   //     isChecked,
   //   );
   // };
-  return (
-    <div className={styles.filterContainer}>
+  return (isFilterActive ? (
+    <aside className={styles.filterContainer + " " + className}>
       <ul className={styles.rowFilterList}>
         <li className={styles.filterListPrice}>
           <label htmlFor="price">
@@ -105,8 +107,8 @@ const Filter = ({ onPriceChange }: FilterProps) => {
           </li>
         ))}
       </ul>
-    </div>
-  );
+    </aside>
+  ): null)
 };
 
 export default Filter;
