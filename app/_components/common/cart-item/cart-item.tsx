@@ -23,7 +23,7 @@ const CartItem = () => {
         <p>Couleur : Blanc</p>
         <div className={styles.ButtonContainer}>
           <ItemQuantity />
-          <QuickActionButton />
+          <QuickActionButton toggleDelete={true} toggleFavorite={true} toggleWishlist={true} />
         </div>
         <p>99$</p>
       </div>

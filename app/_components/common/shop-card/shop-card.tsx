@@ -1,16 +1,15 @@
 "use client"
-import ProductCard from "../../ui/product-card/product-card";
 import { GetShops } from "@/app/middleware/shop";
+import ProductCard from "../../ui/product-card/product-card";
 
 type ShopCardProps = {
   price: number;
   category: string;
 }
 
-const ShopCard = ({ price, category }: ShopCardProps) => {
+const ShopCard = ({ category, price }: ShopCardProps) => {
 
   const data = GetShops(category);
-
   if (!data) {
     console.log('error')
     return <p>Error</p>

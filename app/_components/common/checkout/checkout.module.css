@@ -39,3 +39,7 @@
   gap: 1rem;
   width: 100%;
 }
+
+.buttonCheckout {
+    width: 100% !important;
+}

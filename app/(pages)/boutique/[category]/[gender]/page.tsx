@@ -27,20 +27,22 @@ export default function Page({
 
   return (
     <>
-      <Breadcrumbs />
-      <section className={styles.shopContainer}>
-        <div className={styles.filterContainer}>
-          <ButtonPrimary onClick={() => setFilterAsActive(!isFilterActive)}>
-            <Icon fontSize={24} icon="mdi:filter" />
-            Ouvrir le filtre
-          </ButtonPrimary>
-          <Sort />
-        </div>
-        <Filter className={styles.filter} onPriceChange={handleData} isFilterActive={isFilterActive} />
-        <section className={styles.contentContainer}>
-          <ShopCard category={category} price={childData} />
+      <main>
+        <Breadcrumbs />
+        <section className={styles.shopContainer}>
+          <div className={styles.filterContainer}>
+            <ButtonPrimary onClick={() => setFilterAsActive(!isFilterActive)}>
+              <Icon fontSize={24} icon="mdi:filter" />
+              Ouvrir le filtre
+            </ButtonPrimary>
+            <Sort />
+          </div>
+          <Filter className={styles.filter} onPriceChange={handleData} isFilterActive={isFilterActive} />
+          <section className={styles.contentContainer}>
+            <ShopCard category={category} price={childData} />
+          </section>
         </section>
-      </section>
+      </main>
     </>
   );
 }

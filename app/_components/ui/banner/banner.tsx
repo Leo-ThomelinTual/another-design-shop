@@ -13,10 +13,12 @@ const Banner = ({ src, alt, href, className }: BannerProps) => {
   return (
     <article className={styles.bannerContainer + " " + className}>
       {src ?
-        <Link className={styles.imageContainer} href={href ? href : "/"}>
-        <Image className={styles.banner} src={src} alt={alt ? alt : "Pas de description disponible"} fill sizes="50" loading="eager" />
+        <Link href={href ? href : "/"}>
+          <div className={styles.imageContainer}>
+            <Image src={src} alt={alt ? alt : "Pas de description disponible"} fill sizes="50" loading="eager" />
+          </div>
         </Link>
-        : null}
+      : null}
     </article>
   );
 };

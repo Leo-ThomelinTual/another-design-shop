@@ -1,0 +1,67 @@
+.shopNavbar {
+    display: flex;
+    position: sticky;
+    top: 6rem;
+    z-index: 100;
+    background: var(--background);
+    width: 100%;
+    padding-block: 0.5rem;
+    height: max-content;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.shopNavbarList {
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+    flex-wrap: wrap;
+    list-style: none;
+    gap: 0.5rem;
+}
+
+.subcategoryContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 1rem;
+    gap: 1rem;
+    width: 100%;
+    height: max-content;
+}
+
+.subcategoryGenderList {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    width: max-content;
+    height: max-content;
+    background: var(--background);
+    box-shadow: inset 0 0 5px 3px var(--border-muted);
+    border-radius: var(--radius);
+    gap: 1rem;
+    padding: 2rem;
+}
+
+.subcategoryClothingList {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    list-style: none;
+    width: 50%;
+    height: max-content;
+    padding: 1rem;
+    gap: 1rem;
+}
+
+.shopNavbarListItem {
+    border-bottom: 2px solid black;
+    font-weight: bold;
+}
+
+.buttonPromotion {
+    background: var(--danger) !important;
+}
+.buttonPromotion:hover {
+        color: var(--muted);
+    }

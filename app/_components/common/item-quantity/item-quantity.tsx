@@ -4,6 +4,7 @@ import { useState } from "react";
 import ButtonSecondary from "../../ui/button-secondary/button-secondary";
 import { Icon } from "@iconify/react";
 import styles from "./item-quantity.module.css";
+
 const ItemQuantity = () => {
   const [Quantity, setQuantity] = useState<number>(1);
 

@@ -1,5 +1,5 @@
 import styles from "./checkout.module.css";
-import ButtonSecondary from "../../ui/button-secondary/button-secondary";
+import ButtonPrimary from "../../ui/button-primary/button-primary";
 
 const Checkout = () => {
   return (
@@ -21,7 +21,7 @@ const Checkout = () => {
         <p>
           Total à payer : <span>99€</span>
         </p>
-        <ButtonSecondary isActive={false}>Checkout</ButtonSecondary>
+        <ButtonPrimary className={styles.buttonCheckout}>Checkout</ButtonPrimary>
       </div>
     </article>
   );

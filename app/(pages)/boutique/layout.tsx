@@ -1,5 +1,4 @@
 import { Metadata } from "next";
-import styles from "./shop.module.css";
 
 export const metadata: Metadata = {
   title: "Boutique",
@@ -11,5 +10,9 @@ export default function ShopLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return <main className={styles.shopLayout}>{children}</main>;
+  return (
+    <>
+      {children}
+    </>
+  );
 }

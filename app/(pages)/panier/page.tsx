@@ -3,9 +3,12 @@ import styles from "./page.module.css";
 import CartItem from "@/app/_components/common/cart-item/cart-item";
 import ButtonSecondary from "@/app/_components/ui/button-secondary/button-secondary";
 import { Icon } from "@iconify/react";
+import Navbar from "@/app/_components/common/navbar/navbar";
 
 export default function Panier() {
   return (
+    <>
+      <Navbar />
       <main className={styles.main}>
         <section className={styles.cartItemList}>
           <div className={styles.cartButtonContainer}>
@@ -27,5 +30,6 @@ export default function Panier() {
           <Checkout />
         </section>
       </main>
+    </>
   );
 }

@@ -1,3 +1,4 @@
+import ShopNavbar from "@/app/_components/common/shop-navbar/shop-navbar";
 import styles from "./page.module.css";
 import Banner from "@/app/_components/ui/banner/banner";
 
@@ -5,6 +6,7 @@ export default function Home() {
   return (
     <>
       <header>
+        <ShopNavbar />
         <Banner src="/img/Banner-1.jpg" />
       </header>
       <main className={styles.main}>

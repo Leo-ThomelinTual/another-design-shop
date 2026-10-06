@@ -3,10 +3,13 @@ import styles from "../shop.module.css";
 import Breadcrumbs from "@/app/_components/ui/breadcrumbs/breadcrumbs";
 import ShopCard from "@/app/_components/common/shop-card/shop-card";
 import Filter from "@/app/_components/ui/filter/filter";
-import ButtonPrimary from "@/app/_components/ui/button-primary/button-primary";
 import { Icon } from "@iconify/react";
 import Sort from "@/app/_components/ui/sort/sort";
 import { use, useState } from "react";
+import ButtonSecondary from "@/app/_components/ui/button-secondary/button-secondary";
+import ShopNavbar from "@/app/_components/common/shop-navbar/shop-navbar";
+import Navbar from "@/app/_components/common/navbar/navbar";
+import Footer from "@/app/_components/common/footer/footer";
 
 export default function Page({
   params,
@@ -26,20 +29,25 @@ export default function Page({
 
   return (
     <>
-      <Breadcrumbs />
-      <section className={styles.shopContainer}>
-        <div className={styles.filterContainer}>
-          <ButtonPrimary onClick={() => setFilterAsActive(!isFilterActive)}>
-            <Icon fontSize={24} icon="mdi:filter" />
-            Ouvrir le filtre
-          </ButtonPrimary>
-          <Sort />
-        </div>
-        <Filter className={styles.filter} onPriceChange={handleData} isFilterActive={isFilterActive} />
-        <section className={styles.contentContainer}>
-          <ShopCard category={category} price={childData} />
+      <Navbar />
+      <ShopNavbar />
+      <main className={styles.shopLayout}>
+        <Breadcrumbs />
+        <section className={styles.shopContainer}>
+          <div className={styles.filterContainer}>
+            <ButtonSecondary onClick={() => setFilterAsActive(!isFilterActive)}>
+              <Icon fontSize={24} icon="mdi:filter" />
+              Ouvrir le filtre
+            </ButtonSecondary>
+            <Sort />
+          </div>
+          <Filter className={styles.filter} onPriceChange={handleData} isFilterActive={isFilterActive} />
+          <section className={styles.contentContainer}>
+            <ShopCard category={category} price={childData} />
+          </section>
         </section>
-      </section>
+      </main>
+      <Footer />
     </>
   );
 }

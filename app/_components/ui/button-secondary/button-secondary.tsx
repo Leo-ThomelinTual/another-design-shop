@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./ButtonSecondary.module.css";
+import styles from "./button-secondary.module.css";
 
 interface ButtonSecondaryProps {
   children: React.ReactNode;
@@ -16,13 +16,7 @@ const ButtonSecondary = ({
 }: ButtonSecondaryProps) => {
   return (
     <button
-      className={
-        styles.button +
-        " " +
-        (isActive ? styles.buttonActive : null) +
-        " " +
-        className
-      }
+      className={styles.button + " " + (isActive ? styles.buttonActive : null) + " " + className}
       onClick={onClick}
     >
       {children}

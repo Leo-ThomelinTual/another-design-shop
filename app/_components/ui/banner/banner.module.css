@@ -1,6 +1,5 @@
 .bannerContainer {
-    position: relative;
-    box-shadow: inset 0 0 5px 0 var(--border);
+    box-shadow: inset 0 6px 10px 0px var(--foreground);
     background-color: transparent;
     overflow: hidden;
     width: 100%;
@@ -8,5 +7,8 @@
 }
 
 .imageContainer {
+    position: relative;
+    z-index: -1;
     width: 100%;
+    height: 100%;
 }

@@ -1,10 +1,9 @@
 "use client";
 import styles from "./navbar.module.css";
-import ButtonPrimary from "../../ui/button-primary/button-primary";
+import ButtonNavbar from "../../ui/button-navbar/button-navbar";
 import { Suspense, useState } from "react";
 import Search from "../../ui/search/search";
 import { Icon } from "@iconify/react";
-import Subnav from "../subnav/subnav";
 import { useRouter } from "next/navigation";
 import ButtonSecondary from "../../ui/button-secondary/button-secondary";
 
@@ -35,51 +34,42 @@ const Navbar = ( {cartItem}:NavbarProps ) => {
           </Suspense>
         </li>
         <li className={styles.navbarItem}>
-          <ButtonPrimary onClick={() => handleRouting("/")}>
+          <ButtonNavbar onClick={() => handleRouting("/")}>
             Accueil
             <Icon fontSize={24} icon="mdi:home" />
-          </ButtonPrimary>
-        </li>
-        <li className={styles.navbarItem}>
-          <ButtonPrimary
-            onClick={() =>
-              setIsNavbarShopCategoryActive(!isNavbarShopCategoryActive)
-            }
-          >
-            Boutique
-            <Icon fontSize={24} icon="mdi:shop" />
-          </ButtonPrimary>
+          </ButtonNavbar>
         </li>
 
         {/*{cartItem <= -1 ? (*/}
           <li className={styles.navbarItem}>
-            <ButtonPrimary onClick={() => handleRouting("/panier")}>
+            <ButtonNavbar onClick={() => handleRouting("/panier")}>
               Panier
               <Icon fontSize={24} icon="mdi:cart" />
               (0)
-            </ButtonPrimary>
+            </ButtonNavbar>
           </li>
         {/*): null}*/}
 
         <li className={styles.navbarItem}>
-          <ButtonPrimary onClick={() => handleRouting("/connexion")}>
+          <ButtonNavbar onClick={() => handleRouting("/connexion")}>
             Connexion
             <Icon fontSize={24} icon="mdi:contacts" />
-          </ButtonPrimary>
+          </ButtonNavbar>
         </li>
         <li className={styles.navbarItem}>
-          <ButtonPrimary onClick={() => handleRouting("/inscription")}>
+          <ButtonNavbar onClick={() => handleRouting("/inscription")}>
             Inscription
             <Icon fontSize={24} icon="mdi:contacts" />
-          </ButtonPrimary>
+          </ButtonNavbar>
         </li>
         <li className={styles.navbarItem}>
-          <ButtonPrimary onClick={() => setIsMenuActive(!isMenuActive)}>
+          <ButtonNavbar onClick={() => setIsMenuActive(!isMenuActive)}>
             Menu
             <Icon fontSize={24} icon="mdi:menu" />
-          </ButtonPrimary>
+          </ButtonNavbar>
         </li>
       </ul>
+      {}
       <ul
         className={
           styles.navbarItemContainerMobile +
@@ -100,43 +90,42 @@ const Navbar = ( {cartItem}:NavbarProps ) => {
           </ButtonSecondary>
         </li>
         <li className={styles.navbarItem}>
-          <ButtonPrimary onClick={() => handleRouting("/")}>
+          <ButtonNavbar onClick={() => handleRouting("/")}>
             Accueil
             <Icon fontSize={24} icon="mdi:home" />
-          </ButtonPrimary>
+          </ButtonNavbar>
         </li>
         <li className={styles.navbarItem}>
-          <ButtonPrimary
+          <ButtonNavbar
             onClick={() =>
               setIsNavbarShopCategoryActive(!isNavbarShopCategoryActive)
             }
           >
             Boutique
             <Icon fontSize={24} icon="mdi:shop" />
-          </ButtonPrimary>
+          </ButtonNavbar>
         </li>
 
         <li className={styles.navbarItem}>
-          <ButtonPrimary onClick={() => handleRouting("/panier")}>
+          <ButtonNavbar onClick={() => handleRouting("/panier")}>
             Panier
             <Icon fontSize={24} icon="mdi:cart" />
-          </ButtonPrimary>
+          </ButtonNavbar>
         </li>
 
         <li className={styles.navbarItem}>
-          <ButtonPrimary onClick={() => handleRouting("/connexion")}>
+          <ButtonNavbar onClick={() => handleRouting("/connexion")}>
             Connexion
             <Icon fontSize={24} icon="mdi:contacts" />
-          </ButtonPrimary>
+          </ButtonNavbar>
         </li>
         <li className={styles.navbarItem}>
-          <ButtonPrimary onClick={() => handleRouting("/inscription")}>
+          <ButtonNavbar onClick={() => handleRouting("/inscription")}>
             Inscription
             <Icon fontSize={24} icon="mdi:contacts" />
-          </ButtonPrimary>
+          </ButtonNavbar>
         </li>
       </ul>
-      <Subnav isSubNavActive={isNavbarShopCategoryActive} />
     </nav>
   );
 };
