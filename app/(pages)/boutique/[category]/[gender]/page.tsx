@@ -8,6 +8,7 @@ import Breadcrumbs from "@/app/_components/ui/breadcrumbs/breadcrumbs";
 import { Icon } from "@iconify/react";
 import ShopCard from "@/app/_components/common/shop-card/shop-card";
 import Sort from "@/app/_components/ui/sort/sort";
+import ProductCard from "@/app/_components/ui/product-card/product-card";
 
 export default function Page({
   params,
@@ -39,7 +40,7 @@ export default function Page({
           </div>
           <Filter className={styles.filter} onPriceChange={handleData} isFilterActive={isFilterActive} />
           <section className={styles.contentContainer}>
-            <ShopCard category={category} price={childData} />
+            <ProductCard category={category} priceMax={childData} tags={[]} />
           </section>
         </section>
       </main>

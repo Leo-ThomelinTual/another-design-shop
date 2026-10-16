@@ -15,7 +15,7 @@ export default function Connexion() {
           </div>
         </section>
         <section className={styles.formularContainer}>
-          <ButtonSecondary>Retour</ButtonSecondary>
+          <ButtonSecondary href="/homepage">Retour</ButtonSecondary>
           <h2 className={styles.SignInTitle}>Connexion</h2>
           <form className={styles.formular} action="">
             <Input label="Email" type="email" placeholder="Entrez votre email" />

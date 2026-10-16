@@ -10,6 +10,7 @@ import QuickActionButton from "@/app/_components/common/quick-action/quick-actio
 import ItemQuantity from "@/app/_components/common/item-quantity/item-quantity";
 import ButtonPrimary from "@/app/_components/ui/button-primary/button-primary";
 import Navbar from "@/app/_components/common/navbar/navbar";
+import ColorPalette from "@/app/_components/ui/color-palette/color-palette";
 
 export default function Page({
   params
@@ -23,23 +24,23 @@ export default function Page({
   const tempData = [
     {
       imagesrc: "/img/placeholder_product.jpg",
-      alt: ""
+      alt: "1"
     },
     {
       imagesrc: "/img/placeholder_product.jpg",
-      alt: ""
+      alt: "2"
+    },
+    {
+      imagesrc: "/img/Summer-Scene-Light.png",
+      alt: "3"
     },
     {
       imagesrc: "/img/placeholder_product.jpg",
-      alt: ""
+      alt: "4"
     },
     {
       imagesrc: "/img/placeholder_product.jpg",
-      alt: ""
-    },
-    {
-      imagesrc: "/img/placeholder_product.jpg",
-      alt: ""
+      alt: "5"
     },
   ]
 
@@ -48,16 +49,15 @@ export default function Page({
       <Navbar />
       <main className={styles.main}>
         <Breadcrumbs />
-        <ButtonSecondary>
+        <ButtonSecondary href="/homepage">
           Retour
         </ButtonSecondary>
         {data.map((data) => (
           <section key={data.id} className={styles.detailGrid}>
             <article className={styles.detailImageContainer}>
-              {/*<Image className={styles.image} src="/img/placeholder_product.jpg" alt={`${data.alt}`} width={700} height={500} loading="eager" />*/}
               {tempData.map((data, index) => (
                 <div className={styles.detailProductImageContainer} key={index}>
-                  <Image src={data.imagesrc} alt={data.alt} width={500} height={500} loading="eager" />
+                  <Image src={data.imagesrc} alt={data.alt} fill loading="eager" />
                 </div>
               ))}
             </article>
@@ -74,7 +74,7 @@ export default function Page({
                 <li>qsdqs</li>
               </ul>
 
-              <h3>Taille disponible</h3>
+              <h3>Taille(s) disponible</h3>
               <ul className={styles.productSizeList}>
                 <li>
                   <ButtonSecondary>XXL</ButtonSecondary>
@@ -86,8 +86,14 @@ export default function Page({
                   <ButtonSecondary>L</ButtonSecondary>
                 </li>
               </ul>
-            </article>
 
+              <h3>Couleur(s) disponible</h3>
+              <ul className={styles.productSizeList}>
+                <li><ColorPalette colorName="Red" color="red"onClick={() => console.log("test")} /></li>
+                <li><ColorPalette colorName="Magenta" color="Magenta"onClick={() => console.log("test")} /></li>
+                <li><ColorPalette colorName="Green" color="green" onClick={() => console.log("test")} /></li>
+              </ul>
+            </article>
 
             <article className={styles.detailsFooter}>
               <p className={styles.price}>{data.price}€</p>

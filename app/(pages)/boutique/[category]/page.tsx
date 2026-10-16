@@ -1,15 +1,15 @@
 "use client"
 import styles from "../shop.module.css";
 import Breadcrumbs from "@/app/_components/ui/breadcrumbs/breadcrumbs";
-import ShopCard from "@/app/_components/common/shop-card/shop-card";
 import Filter from "@/app/_components/ui/filter/filter";
 import { Icon } from "@iconify/react";
 import Sort from "@/app/_components/ui/sort/sort";
-import { use, useState } from "react";
+import { Suspense, use, useState } from "react";
 import ButtonSecondary from "@/app/_components/ui/button-secondary/button-secondary";
 import ShopNavbar from "@/app/_components/common/shop-navbar/shop-navbar";
 import Navbar from "@/app/_components/common/navbar/navbar";
 import Footer from "@/app/_components/common/footer/footer";
+import ProductCard from "@/app/_components/ui/product-card/product-card";
 
 export default function Page({
   params,
@@ -43,7 +43,9 @@ export default function Page({
           </div>
           <Filter className={styles.filter} onPriceChange={handleData} isFilterActive={isFilterActive} />
           <section className={styles.contentContainer}>
-            <ShopCard category={category} price={childData} />
+            <Suspense>
+              <ProductCard category={category} priceMax={childData} tags={[]} />
+            </Suspense>
           </section>
         </section>
       </main>

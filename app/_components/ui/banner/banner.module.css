@@ -1,5 +1,5 @@
 .bannerContainer {
-    box-shadow: inset 0 6px 10px 0px var(--foreground);
+    box-shadow: inset 0 6px 10px 0px #00000050;
     background-color: transparent;
     overflow: hidden;
     width: 100%;

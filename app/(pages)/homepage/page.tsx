@@ -5,10 +5,8 @@ import Banner from "@/app/_components/ui/banner/banner";
 export default function Home() {
   return (
     <>
-      <header>
-        <ShopNavbar />
-        <Banner src="/img/Banner-1.jpg" />
-      </header>
+      <ShopNavbar />
+      <Banner src="/img/Banner-1.jpg" />
       <main className={styles.main}>
         <section className={styles.showcaseBento}>
           <Banner className={styles.colspan4} src="/img/Banner-1.jpg" href="/boutique/femme" alt="test" />

@@ -10,7 +10,7 @@ export default function Inscription() {
     <>
       <main className={styles.main}>
         <section className={styles.formularContainer}>
-          <ButtonSecondary>Retour</ButtonSecondary>
+          <ButtonSecondary href="/homepage">Retour</ButtonSecondary>
           <h2 className={styles.SignInTitle}>Inscription</h2>
           <form className={styles.formular} action="">
             <Input label="Nom" type="text" placeholder="Entrez votre nom" />
