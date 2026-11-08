@@ -20,27 +20,27 @@
     --success-glass: #17c90060;
 }
 
-/*@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ffffff;
-    --background-transparent: #0a0a0a95;
-    --border: rgb(202, 202, 202);
-    --border-muted: rgb(202, 202, 202);
-    --muted: rgb(202, 202, 202);
-  }
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background: #0a0a0a;
+        --foreground: #ffffff;
+        --background-transparent: #0a0a0a95;
+        --border: rgb(202, 202, 202);
+        --border-muted: rgb(202, 202, 202);
+        --muted: rgb(202, 202, 202);
+    }
 }
 
 @media (prefers-color-scheme: light) {
-  :root {
-    --background: #ffffff;
-    --background-transparent: #ffffff95;
-    --foreground: #171717;
-    --border: rgb(202, 202, 202);
-    --border-muted: rgb(202, 202, 202);
-    --muted: rgb(202, 202, 202);
-  }
-}*/
+    :root {
+        --background: #ffffff;
+        --background-transparent: #ffffff95;
+        --foreground: #171717;
+        --border: rgb(202, 202, 202);
+        --border-muted: rgb(202, 202, 202);
+        --muted: rgb(202, 202, 202);
+    }
+}
 
 html {
     min-height: 100%;

@@ -19,30 +19,7 @@ export default function Page({
 }) {
   const { category, id } = use(params);
 
-  const data = GetShopsById(category, id);
-
-  const tempData = [
-    {
-      imagesrc: "/img/placeholder_product.jpg",
-      alt: "1",
-    },
-    {
-      imagesrc: "/img/placeholder_product.jpg",
-      alt: "2",
-    },
-    {
-      imagesrc: "/img/Summer-Scene-Light.png",
-      alt: "3",
-    },
-    {
-      imagesrc: "/img/placeholder_product.jpg",
-      alt: "4",
-    },
-    {
-      imagesrc: "/img/placeholder_product.jpg",
-      alt: "5",
-    },
-  ];
+  const productDetails = GetShopsById(category, id);
 
   return (
     <>
@@ -50,13 +27,17 @@ export default function Page({
       <main className={styles.main}>
         <Breadcrumbs />
         <ButtonSecondary href="/homepage">Retour</ButtonSecondary>
-        {data.map((data) => (
+        {productDetails.map((data) => (
           <section key={data.id} className={styles.detailGrid}>
             <article className={styles.detailImageContainer}>
-              {tempData.map((data, index) => (
+              {productDetails.map((data, index) => (
                 <div className={styles.detailProductImageContainer} key={index}>
                   <Image
-                    src={data.imagesrc}
+                    src={
+                      data.image
+                        ? `/img/${data.image}`
+                        : `/img/placeholder_product.jpg`
+                    }
                     alt={data.alt}
                     fill
                     loading="eager"

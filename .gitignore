@@ -40,3 +40,6 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 public/img/Summer-Scene-Light.png
+public/img/Banner-2.png
+public/img/Banner-3.png
+public/img/Banner-1.png

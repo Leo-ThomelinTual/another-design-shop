@@ -57,7 +57,9 @@ const ProductCard = ({ tags, priceMax, category }: productCardProps) => {
         >
           <Image
             className={styles.image}
-            src="/img/placeholder_product.jpg"
+            src={
+              data.image ? `/img/${data.image}` : `/img/placeholder_product.jpg`
+            }
             alt={data.alt}
             width={500}
             height={500}

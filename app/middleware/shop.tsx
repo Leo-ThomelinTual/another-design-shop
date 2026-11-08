@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 
 interface ShopData {
   id: number;
-  img: string;
+  image: string;
   alt: string;
   title: string;
   description: string;
