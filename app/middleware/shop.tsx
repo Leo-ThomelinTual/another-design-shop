@@ -1,30 +1,38 @@
-"use client"
+"use client";
 import { useEffect, useState } from "react";
 
+interface ShopData {
+  id: number;
+  img: string;
+  alt: string;
+  title: string;
+  description: string;
+  price: number;
+}
 
 export function GetShops(category: string) {
-  const [data, setData] = useState<[]>([]);
+  const [data, setData] = useState<ShopData[]>([]);
 
   useEffect(() => {
-    fetch(`http://192.168.1.28:3000/api/shop/${category}`).then(
-      res => res.json()
-    ).then(data => {
-      setData(data);
-    })
-  }, [category])
+    fetch(`http://192.168.1.28:3000/api/shop/${category}`)
+      .then((res) => res.json())
+      .then((data) => {
+        setData(data);
+      });
+  }, [category]);
 
   return data;
 }
 
 export function GetShopsById(category: string, id: number) {
-  const [data, setData] = useState<[]>([]);
+  const [data, setData] = useState<ShopData[]>([]);
   useEffect(() => {
-    fetch(`http://192.168.1.28:3000/api/shop/${category}/${id}`).then(
-      res => res.json()
-    ).then(data => {
-      setData(data);
-    })
-  }, [category, id])
+    fetch(`http://192.168.1.28:3000/api/shop/${category}/${id}`)
+      .then((res) => res.json())
+      .then((data) => {
+        setData(data);
+      });
+  }, [category, id]);
 
   return data;
 }

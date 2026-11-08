@@ -22,9 +22,18 @@ export default function Panier() {
             </ButtonSecondary>
           </div>
           <CartItem />
-        <CartItem />
-        <CartItem />
-        <CartItem />
+          <CartItem />
+          <CartItem />
+          <CartItem />
+          <CartItem />
+          <CartItem />
+          <CartItem />
+          <CartItem />
+          <CartItem />
+          <CartItem />
+          <CartItem />
+          <CartItem />
+          <CartItem />
         </section>
         <section className={styles.checkoutContainer}>
           <Checkout />

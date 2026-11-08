@@ -2,26 +2,31 @@
 import { useState } from "react";
 import styles from "./filter.module.css";
 import { brands, sizes, sizeShoes } from "@/app/_lib/dataFilter";
+import ButtonPrimary from "../button-primary/button-primary";
 
 type FilterProps = {
   onPriceChange: (price: number) => void;
-  isFilterActive: boolean;
+  isFilterActive: boolean | false;
+  setIsFilterActive: (value: boolean) => void;
   className?: string;
 };
 
-const Filter = ({ onPriceChange, isFilterActive, className }: FilterProps) => {
+const Filter = ({
+  onPriceChange,
+  isFilterActive,
+  setIsFilterActive,
+  className,
+}: FilterProps) => {
   const [filterPrice, setFilterPrice] = useState<number>(500);
+  // const [isChecked, setIsChecked] = useState<string>("true");
 
   const handleInputChangePrice = (e: number) => {
     setFilterPrice(e);
     onPriceChange(e);
   };
 
-  const handleInputChangeCheckbox = () => (
-    console.log("temp")
-  )
+  const handleInputChangeCheckbox = () => console.log("temp");
 
-  // const [isChecked, setIsChecked] = useState<string>("true");
   // const handleInputChangeCheckbox = (
   //   event: React.ChangeEvent<HTMLInputElement>,
   // ) => {
@@ -41,8 +46,14 @@ const Filter = ({ onPriceChange, isFilterActive, className }: FilterProps) => {
   //     isChecked,
   //   );
   // };
-  return (isFilterActive ? (
+  return isFilterActive ? (
     <aside className={styles.filterContainer + " " + className}>
+      <ButtonPrimary
+        onClick={() => setIsFilterActive(!isFilterActive)}
+        className={styles.filterCloseButton}
+      >
+        Fermer le filtre
+      </ButtonPrimary>
       <ul className={styles.rowFilterList}>
         <li className={styles.filterListPrice}>
           <label htmlFor="price">
@@ -108,7 +119,7 @@ const Filter = ({ onPriceChange, isFilterActive, className }: FilterProps) => {
         ))}
       </ul>
     </aside>
-  ): null)
+  ) : null;
 };
 
 export default Filter;

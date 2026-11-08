@@ -1,14 +1,14 @@
 .QuantityContainer {
-  display: flex;
-  flex-direction: row;
-  gap: 1rem;
-  width: max-content;
-  height: max-content;
-  input {
-    text-align: center;
-    width: 100px;
-    background-color: var(--background);
-    color: var(--foreground);
-    border: 2px solid var(--foreground);
-  }
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    width: max-content;
+    input {
+        text-align: center;
+        width: 100px;
+        height: 100%;
+        background-color: var(--background);
+        color: var(--foreground);
+        border: 2px solid var(--foreground);
+    }
 }

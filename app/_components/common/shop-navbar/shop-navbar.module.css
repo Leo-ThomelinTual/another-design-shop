@@ -63,5 +63,15 @@
     background: var(--danger) !important;
 }
 .buttonPromotion:hover {
-        color: var(--muted);
+    color: var(--muted);
+}
+
+@media (max-width: 1024px) {
+    .shopNavbarList {
+        justify-content: center;
     }
+
+    .subcategoryClothingList {
+        width: 100%;
+    }
+}

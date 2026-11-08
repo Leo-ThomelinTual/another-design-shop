@@ -1,18 +1,10 @@
-"use client"
+"use client";
 import Image from "next/image";
 import styles from "./product-card.module.css";
 import Link from "next/link";
 import Tags from "../tags/tags";
 import { GetShops } from "@/app/middleware/shop";
 import { useEffect, useState } from "react";
-
-interface ShopData {
-  id: string;
-  alt: string;
-  title: string;
-  description: string;
-  price: number;
-}
 
 interface productCardProps {
   // isProductShoes?: boolean | false;
@@ -23,11 +15,7 @@ interface productCardProps {
   category: string;
 }
 
-const ProductCard = ({
-  tags,
-  priceMax,
-  category
-}: productCardProps) => {
+const ProductCard = ({ tags, priceMax, category }: productCardProps) => {
   const [isLoading, setIsLoading] = useState(true);
 
   const data = GetShops(category);
@@ -35,34 +23,47 @@ const ProductCard = ({
   useEffect(() => {
     const Loading = async () => {
       setIsLoading(true);
-    }
+    };
     Loading();
     try {
-
     } catch (error) {
       console.error("Erreur lors du chargement du produits:", error);
     } finally {
       setIsLoading(false);
     }
-  }, [category])
+  }, [category]);
 
   if (isLoading) {
-    return <div>Chargement des produits</div>
+    return <div>Chargement des produits</div>;
   }
 
-  const filteredProducts = data.filter((data: ShopData) => data.price <= priceMax);
+  const filteredProducts = data.filter((data) => data.price <= priceMax);
 
   if (filteredProducts.length === 0) {
-    return <div>Aucun produit trouvé dans cette catégorie sous le prix de {priceMax} €</div>
+    return (
+      <div>
+        Aucun produit trouvé dans cette catégorie sous le prix de {priceMax} €
+      </div>
+    );
   }
 
   return (
     <>
       {filteredProducts.map((data) => (
-        <Link key={data.id} className={styles.card} href={`/boutique/${category}/product/${data.id}`}>
-          <div className={styles.cardImageContainer}>
-            <Image src="/img/placeholder_product.jpg" alt={data.alt} fill loading="eager" sizes="24" />
-          </div>
+        <Link
+          key={data.id}
+          className={styles.card}
+          href={`/boutique/${category}/product/${data.id}`}
+        >
+          <Image
+            className={styles.image}
+            src="/img/placeholder_product.jpg"
+            alt={data.alt}
+            width={500}
+            height={500}
+            loading="eager"
+            sizes="24"
+          />
 
           <div className={styles.cardContent}>
             <h3 className={styles.cardTitle}>{data.title}</h3>
@@ -80,7 +81,7 @@ const ProductCard = ({
           </div>
         </Link>
       ))}
-  </>
+    </>
   );
 };
 

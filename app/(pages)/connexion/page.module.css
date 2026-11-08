@@ -41,7 +41,7 @@
     width: 100%;
     padding: 5rem;
     gap: 2rem;
-    :nth-child(+n + 0) {
+    :nth-child(n + 0) {
         grid-column: span 2;
     }
 }
@@ -60,4 +60,22 @@
 .brandname {
     font-size: 3rem;
     margin-top: auto;
+}
+
+@media (max-width: 1024px) {
+    .main {
+        display: flex;
+        flex-direction: column;
+        height: max-content;
+        padding: 1rem;
+    }
+    .glass {
+        display: none;
+    }
+    .brandname {
+        display: none;
+    }
+    .formular {
+        padding: 0;
+    }
 }

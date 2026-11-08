@@ -1,96 +1,40 @@
 .main {
-  display: flex;
-  flex-direction: column;
-  padding-top: 2rem;
-}
-
-.showcase {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  column-gap: 10rem;
-  row-gap: 5em;
-  & > .imagePlaceholder {
-    width: 500px;
-    height: 500px;
-    border-radius: 10px;
-    background: lightgray;
-    box-shadow: 0 4px 10px 0px gray;
-  }
+    display: flex;
+    flex-direction: column;
+    padding-top: 2rem;
 }
 
 .showcaseBento {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 2rem;
-  width: 100%;
-  height: 100%;
-  padding-inline: 15em;
-  /* Select all child element */
-  & > * {
-    justify-self: center;
-    background: lightgray;
-    border-radius: 10px;
-  }
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    width: 100%;
+    height: 100%;
+    padding-inline: 10em;
+    /* Select all child element */
+    & > * {
+        border-radius: 10px;
+    }
+    :first-child {
+        grid-column: span 4;
+    }
+    :nth-child(n + 2) {
+        grid-column: span 2;
+    }
 }
 
-.colspan1 {
-    grid-column: span 1;
-}
-
-.colspan2 {
-    grid-column: span 2;
-
-}
-
-.colspan3 {
-    grid-column: span 3;
-}
-
-.colspan4 {
-    grid-column: span 4;
-}
-
-.showcaseDescription {
-  display: flex;
-  gap: 1rem;
-  box-shadow: inset 0 0 5px 0px gray;
-  flex-direction: column;
-  align-self: center;
-  width: 700px;
-  border-radius: 10px;
-  padding-inline: 20px;
-  padding-block: 40px;
-}
-
-.productCardContainer {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  margin-inline: 5%;
-}
-
-.shopCardContainer {
-  display: flex;
-  flex-direction: column;
-  gap: 5rem;
-}
-
-.cardContainer {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  width: 100%;
-  gap: 2.5rem;
-  padding-inline: 20px;
-}
-
-.titleCard {
-  display: flex;
-  align-self: center;
-  padding: 20px;
-  border-radius: 10px;
-  text-transform: uppercase;
-  box-shadow: inset 0 0 5px 0 gray;
+@media (max-width: 1300px) {
+    .headerBanner {
+        height: 40vh !important;
+        * {
+            object-fit: fill !important;
+        }
+    }
+    .showcaseBento {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding-inline: 1em;
+        gap: 1rem;
+    }
 }

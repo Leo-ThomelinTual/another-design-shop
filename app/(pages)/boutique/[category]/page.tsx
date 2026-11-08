@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import styles from "../shop.module.css";
 import Breadcrumbs from "@/app/_components/ui/breadcrumbs/breadcrumbs";
 import Filter from "@/app/_components/ui/filter/filter";
@@ -15,17 +15,16 @@ export default function Page({
   params,
   searchParams,
 }: {
-    params: Promise<{ category: string; gender: string; index: string }>
+  params: Promise<{ category: string; gender: string; index: string }>;
   searchParams: Promise<{ [category: string]: string | string[] | undefined }>;
-  }) {
-
+}) {
   const { category } = use(params);
 
   const [isFilterActive, setFilterAsActive] = useState<boolean>(false);
   const [childData, setChildData] = useState<number>(999);
-    const handleData = (price: number) => {
-      setChildData(price);
-    };
+  const handleData = (price: number) => {
+    setChildData(price);
+  };
 
   return (
     <>
@@ -41,7 +40,12 @@ export default function Page({
             </ButtonSecondary>
             <Sort />
           </div>
-          <Filter className={styles.filter} onPriceChange={handleData} isFilterActive={isFilterActive} />
+          <Filter
+            className={styles.filter}
+            onPriceChange={handleData}
+            setIsFilterActive={setFilterAsActive}
+            isFilterActive={isFilterActive}
+          />
           <section className={styles.contentContainer}>
             <Suspense>
               <ProductCard category={category} priceMax={childData} tags={[]} />

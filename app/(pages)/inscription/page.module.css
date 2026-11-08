@@ -38,10 +38,10 @@
     width: 100%;
     padding: 5rem;
     gap: 2rem;
-    :nth-child(-n + 2) {
+    :nth-child(n + 2) {
         grid-column: span 1;
     }
-    :nth-child(+n + 3) {
+    :nth-child(n + 3) {
         grid-column: span 2;
     }
 }
@@ -61,4 +61,25 @@
     text-align: end;
     font-size: 3rem;
     margin-top: auto;
+}
+
+@media (max-width: 1024px) {
+    .main {
+        display: flex;
+        flex-direction: column;
+        height: max-content;
+        padding: 1rem;
+    }
+    .brandname {
+        display: none;
+    }
+
+    .glass {
+        display: none;
+    }
+    .formular {
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+    }
 }

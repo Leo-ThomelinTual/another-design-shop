@@ -6,12 +6,12 @@ export default function Home() {
   return (
     <>
       <ShopNavbar />
-      <Banner src="/img/Banner-1.jpg" />
+      <Banner className={styles.headerBanner} src="/img/Banner-1.jpg" />
       <main className={styles.main}>
         <section className={styles.showcaseBento}>
-          <Banner className={styles.colspan4} src="/img/Banner-1.jpg" href="/boutique/femme" alt="test" />
-          <Banner className={styles.colspan2} src="/img/Banner-2.jpg" alt="test" />
-          <Banner className={styles.colspan2} src="/img/Banner-2.jpg" alt="test" />
+          <Banner src="/img/Banner-1.jpg" href="/boutique/femme" alt="test" />
+          <Banner src="/img/Banner-2.jpg" alt="test" />
+          <Banner src="/img/Banner-2.jpg" alt="test" />
         </section>
       </main>
     </>

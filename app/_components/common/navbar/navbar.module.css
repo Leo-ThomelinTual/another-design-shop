@@ -1,87 +1,51 @@
 .navbar {
-  position: sticky;
-  top: 0;
-  height: max-content;
-  width: 100%;
-  padding: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  z-index: 20;
-  background: var(--background);
-  backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    height: max-content;
+    width: 100%;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    z-index: 20;
+    background: var(--background);
+    backdrop-filter: blur(10px);
 }
 
 .navbarItemContainer {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  list-style-type: none;
-  text-transform: uppercase;
-  gap: 1rem;
-  :nth-child(2) {
-    width: 100%;
-  }
-  .navbarItem:last-child {
-    display: none;
-  }
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    list-style-type: none;
+    text-transform: uppercase;
+    gap: 1rem;
+    :nth-child(2) {
+        width: 100%;
+    }
+    .navbarItem:last-child {
+        display: none;
+    }
 }
 
 .navbarTitle {
     cursor: pointer;
 }
 
-.navbarItemContainerMobile {
-  position: fixed;
-  top: 0;
-  right: 0;
-  /* transform: translateX(100%); */
-  z-index: 100;
-  display: hidden;
-  flex-direction: column;
-  text-transform: uppercase;
-  gap: 1rem;
-  padding: 0rem;
-  align-items: center;
-  list-style-type: none;
-  background: var(--background);
-  width: 0%;
-  overflow: hidden;
-  height: 100vh;
-  transition:
-    transform 0.5s ease,
-    width 0.5s ease;
-  .navbarItem:first-child {
-    text-align: center;
-    padding-block: 0.5rem;
-  }
-  .navbarItem:nth-child(2) {
-    width: 100%;
-  }
-}
-
-.navbarItemContainerMobileActive {
-  /* transform: translateX(0); */
-  width: 100%;
-  padding: 1rem;
-  transition: transform 0.5s ease width 0.5s ease;
-}
-
 @media (max-width: 1024px) {
-  .navbar {
-    padding: 0.5rem;
-  }
-
-  .navbarItemContainer {
-    .navbarItem {
-      display: none;
+    .navbarItemContainer {
+        justify-content: space-between;
+        .navbarItem {
+            display: none;
+        }
+        :first-child {
+            display: flex;
+        }
+        :nth-child(2) {
+            display: flex;
+            width: 100%;
+        }
+        .navbarItem:last-child {
+            display: flex;
+        }
     }
-    :nth-child(2) {
-      display: none;
-      width: 100%;
-    }
-    .navbarItem:last-child {
-      display: flex;
-    }
-  }
 }
